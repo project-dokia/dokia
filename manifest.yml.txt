@@ -1,0 +1,9 @@
+---
+applications:
+- name: supplierroom
+  memory: 512M
+  host: supplierroom
+  domain: mybluemix.net
+  path: defaultServer
+  services:
+  - onduty-cloudantNoSQLDB

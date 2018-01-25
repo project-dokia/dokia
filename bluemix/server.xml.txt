@@ -1,0 +1,83 @@
+<server description="new server">
+    <!-- Enable features -->
+    <featureManager>
+        <feature>javaee-7.0</feature>
+        <feature>localConnector-1.0</feature>
+        <feature>cloudant-1.0</feature>
+        <!-- OIDC -->
+        <feature>openidConnectClient-1.0</feature>
+        <feature>icap:managementConnector-1.0</feature>
+        <feature>appstate-2.0</feature>
+        <feature>cloudAutowiring-1.0</feature>
+    </featureManager>
+    <!-- This template enables security. To get the full use of all the capabilities,
+                a keystore and user registry are required. -->
+    <!-- For the keystore, default keys are generated and stored in a keystore.
+                To provide the keystore password, generate an encoded password using bin/securityUtility
+                encode and add it below in the password attribute of the keyStore element.
+                Then uncomment the keyStore element. -->
+    <!-- <keyStore password=""/> -->
+    <!--For a user registry configuration, configure your user registry. For
+                example, configure a basic user registry using the basicRegistry element.
+                Specify your own user name below in the name attribute of the user element.
+                For the password, generate an encoded password using bin/securityUtility
+                encode and add it in the password attribute of the user element. Then uncomment
+                the user element. -->
+    <basicRegistry id="basic" realm="BasicRealm">
+        <!-- <user name="yourUserName" password="" /> -->
+    </basicRegistry>
+    <!-- To access this server from a remote client add a host attribute to
+                the following element, e.g. host="*" -->
+    <httpEndpoint host="127.0.0.1" httpPort="${port}" id="defaultHttpEndpoint"/>
+    <!-- import the IdP certificate into the keystore at <liberty_root>/usr/servers/<server_name>/resources/security/key.jks -->
+    <keyStore id="defaultKeyStore" password="{xor}KD4sPjsyNjE="/>
+    <keyStore id="trustStore" password="{xor}KD4sPjsyNjE="/>
+    <openidConnectClient id="supplierroom" clientId="MDY3MGVlZDUtZDViOS00"
+     clientSecret="Mjg2OTY2NWItZTdjMS00"
+      authorizationEndpointUrl="https://w3id-test.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/authorize"
+       tokenEndpointUrl="https://w3id-test.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/token"
+ issuerIdentifier="https://w3id-test.sso.ibm.com/isam"
+  userIdentityToCreateSubject="sub" signatureAlgorithm="RS256" trustStoreRef="trustStore"
+   trustAliasName="w3idp" sslRef="sslidp" authFilterRef="myAuthFilter"> </openidConnectClient>
+    <authFilter id="myAuthFilter">
+        <requestUrl id="myRequestUrl" urlPattern="/api/login" matchType="contains"/>
+    </authFilter>
+    <!-- redirects to https://libertystarterclaude.mybluemix.net/oidcclient/redirect/bluemixoidc1 -->
+    <!-- define ssl connection to w3 IdP -->
+    <!-- w3idp = *.sso.ibm.com -->
+    <ssl id="sslidp" keyStoreRef="defaultKeyStore" serverKeyAlias="w3idp"/>
+    <!-- OIDC -->
+    <sslDefault sslRef="DefaultSSLSettings"/>
+    <ssl id="DefaultSSLSettings" keyStoreRef="defaultKeyStore" trustStoreRef="trustStore"/>
+    <!-- Automatically expand WAR files and EAR files -->
+    <applicationManager autoExpand="true"/>
+    <applicationMonitor updateTrigger="mbean"/>
+    <keyStore id="defaultKeyStore" password="{xor}KD4sPjsyNjE="/>
+    <basicRegistry id="basic" realm="BasicRealm">
+        <user name="wasadmin" password="{xor}KD4sPjsyNjE="/>
+    </basicRegistry>
+    <webApplication id="supplier" location="supplier.war" contextRoot="/" name="supplier">
+        <application-bnd>
+            <security-role name="AllAuthenticated">
+                <special-subject type="ALL_AUTHENTICATED_USERS"/>
+            </security-role>
+        </application-bnd>
+        <classloader commonLibraryRef='cloudantNoSQLDB-library'/>
+    </webApplication>
+    <webContainer trustHostHeaderPort='true' extractHostHeaderPort='true'/>
+    <include location='runtime-vars.xml'/>
+    <logging logDirectory='${application.log.dir}' consoleLogLevel='INFO'/>
+    <httpDispatcher enableWelcomePage='false'/>
+    <config updateTrigger='mbean'/>
+    <appstate2 appName='supplier'/>
+    <cloudant id='cloudantNoSQLDB-Cloudant NoSQL DB-3p' libraryRef='cloudantNoSQLDB-library'
+     username='${cloud.services.Cloudant NoSQL DB-3p.connection.username}'
+    password='${cloud.services.Cloudant NoSQL DB-3p.connection.password}'
+     url='${cloud.services.Cloudant NoSQL DB-3p.connection.url}'/>
+    <library id='cloudantNoSQLDB-library'>
+        <fileset id='cloudantNoSQLDB-fileset' dir='${server.config.dir}/lib'
+         includes='cloudant-client-2.7.0.jar cloudant-http-2.7.0.jar commons-codec-1.9.jar commons-io-2.5.jar gson-2.8.0.jar'/>
+    </library>
+    <cloudantDatabase jndiName='cloudant/Cloudant NoSQL DB-3p' databaseName='cloudantnosqldb-3p'
+     create='true' cloudantRef='cloudantNoSQLDB-Cloudant NoSQL DB-3p'/>
+</server>

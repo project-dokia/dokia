@@ -1,0 +1,18 @@
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+// $purple: #663399;
+// $brand-primary: $purple;
+
+$blue:                          #428bca;
+$custom-select-indicator-color: $blue;
+$custom-select-indicator:       str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23");
+$tooltip-bg:                    $blue;
+$tooltip-opacity:               .8;
+// $tooltip-arrow-color:           $blue;
+// $popover-border-color:          rgba($blue,.2);
+// $popover-bg:                    $blue;
+// $popover-title-bg:              darken($blue, 3%);
+// $popover-arrow-color:           $blue;
+// $popover-arrow-outer-color:     fade-in($blue, .05)

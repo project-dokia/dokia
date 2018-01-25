@@ -1,0 +1,44 @@
+<server>
+
+	<featureManager>
+		<feature>servlet-3.1</feature>
+
+		<feature>javaee-7.0</feature>
+		<feature>localConnector-1.0</feature>
+		<feature>cloudant-1.0</feature>
+
+		<!-- OIDC -->
+		<feature>openidConnectClient-1.0</feature>
+	</featureManager>
+
+	<httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080">
+		<tcpOptions soReuseAddr="true" />
+	</httpEndpoint>
+
+	<openidConnectClient id="supplierroomprod" clientId="OWY3ZTYxNGQtNWE1Ny00"
+		clientSecret="YTEwNDQwMmItOTc2ZC00"
+		authorizationEndpointUrl="https://w3id.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/authorize"
+		tokenEndpointUrl="https://w3id.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/token"
+		issuerIdentifier="https://w3id.sso.ibm.com/isam"
+		userIdentityToCreateSubject="sub" signatureAlgorithm="RS256"
+		trustAliasName="w3idp" authFilterRef="myAuthFilter">
+	</openidConnectClient>
+
+	<authFilter id="myAuthFilter">
+		<requestUrl id="myRequestUrl" urlPattern="/api/login"
+			matchType="contains" />
+	</authFilter>
+
+	<webApplication id="supplier" location="${appLocation}"
+		name="supplier" context-root="/supplier">
+		<application-bnd>
+			<security-role name="AllAuthenticated">
+				<special-subject type="ALL_AUTHENTICATED_USERS" />
+			</security-role>
+		</application-bnd>
+	</webApplication>
+
+<!-- 	<application name="JavaHelloWorldApp" context-root="/JavaHelloWorldApp" -->
+<!-- 		location="${appLocation}" type="war" /> -->
+
+</server>

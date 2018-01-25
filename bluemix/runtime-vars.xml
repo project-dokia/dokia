@@ -1,0 +1,18 @@
+<server>
+  <variable name='cloud.services.Cloudant NoSQL DB-3p.connection.username' value='9982ae52-6fe4-44fd-a688-4b451a18ea62-bluemix'/>
+  <variable name='cloud.services.Cloudant NoSQL DB-3p.connection.password' value='3fe42a38a58b30cff65d36180d2c9011217af3b70dde915db70575be2f097318'/>
+  <variable name='cloud.services.Cloudant NoSQL DB-3p.connection.host' value='9982ae52-6fe4-44fd-a688-4b451a18ea62-bluemix.cloudant.com'/>
+  <variable name='cloud.services.Cloudant NoSQL DB-3p.connection.port' value='443'/>
+  <variable name='cloud.services.Cloudant NoSQL DB-3p.connection.url' value='https://9982ae52-6fe4-44fd-a688-4b451a18ea62-bluemix:3fe42a38a58b30cff65d36180d2c9011217af3b70dde915db70575be2f097318@9982ae52-6fe4-44fd-a688-4b451a18ea62-bluemix.cloudant.com'/>
+  <variable name='cloud.services.Cloudant NoSQL DB-3p.label' value='cloudantNoSQLDB'/>
+  <variable name='cloud.services.Cloudant NoSQL DB-3p.plan' value='Lite'/>
+  <variable name='cloud.services.Cloudant NoSQL DB-3p.name' value='Cloudant NoSQL DB-3p'/>
+  <variable name='port' value='8080'/>
+  <variable name='home' value='/home/vcap/app'/>
+  <variable name='vcap_app_port' value='8080'/>
+  <variable name='application_name' value='supplierroom'/>
+  <variable name='application_version' value='2985e98b-1638-4160-af82-a6dbcf85bcb1'/>
+  <variable name='host' value='0.0.0.0'/>
+  <variable name='application_uris' value='supplierroom.mybluemix.net'/>
+  <variable name='application.log.dir' value='../../../../../logs'/>
+</server>

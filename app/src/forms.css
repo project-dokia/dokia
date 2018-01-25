@@ -1,0 +1,99 @@
+/* Styles for Angular form validation */
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+}
+  
+.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+}
+
+/* Styles for number type input fields */
+/* hide up/down arrows ("spinners") on input fields marked type="number" */
+.no-spinners {
+    -moz-appearance:textfield;
+  }
+  
+.no-spinners::-webkit-outer-spin-button,
+.no-spinners::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Styles and effects for Boostrap 4 Collapse component */
+[data-toggle="collapse"] i:before {
+    content: "\f139";
+    float: right;
+    transition: all 0.5s;
+}
+  
+[data-toggle="collapse"].collapsed i:before {
+    -webkit-transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
+
+.panel-title {
+	display: block;
+	font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none!important;
+	/* letter-spacing: 1px;
+    word-spacing: 3px; */
+}
+
+/* Styles for Angular Material components */
+/* Styles to be customized on current material theme .css file (usually defined at src/styles/app.scss and located at node_modules/@angular/material/prebuilt-themes) */
+/* .mat-ink-bar {
+    background-color: #0D47A1;
+} 
+  
+.mat-ripple-element {
+    background-color: rgba(13, 71, 161, 0.400);
+}
+
+.mat-tab-link:focus {
+    background-color: rgba(130, 177, 255, 0.200);
+}
+
+.mat-tab-header {
+    background-color: rgba(130, 177, 255, 0.800);
+} */
+
+/* Styles for tab labels */
+.mat-tab-label {
+  /* min-width: 25px !important;
+  padding: 5px; */
+  /* background-color: transparent; */
+  color: #0D47A1;
+  font-family: Verdana;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+  /* min-width: 25px !important;
+  padding: 5px; */
+  /* background-color: transparent; */
+  /* color: #2962FF; */
+  /* color: #0000CD; */
+  /* color: black; */
+  color: blue;
+  font-family: Verdana;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+/* Styles for each child tab label */
+/* .mat-tab-label:nth-child(1) {
+  background-color: #81D4FA;
+  background-color: #01579B;
+}
+.mat-tab-label:nth-child(2) {
+  background-color: #80DEEA;
+  background-color: #B71C1C;
+}
+.mat-tab-label:nth-child(3) {
+  background-color: #80CBC4;
+  background-color: #673AB7;
+} */
