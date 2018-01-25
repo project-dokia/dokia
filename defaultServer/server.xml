@@ -14,8 +14,8 @@
 
 	<httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="8080" />
 
-	<application name="supplier" context-root="/" type="war"
-		location="supplier.war">
+	<application name="dokia" context-root="/" type="war"
+		location="dokia.war">
 		<application-bnd>
 			<security-role name="AllAuthenticated">
 				<special-subject type="ALL_AUTHENTICATED_USERS" />
@@ -28,7 +28,7 @@
 <!-- 	<openidConnectClient authFilterRef="myAuthFilter" -->
 <!-- 		authorizationEndpointUrl="https://w3id-test.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/authorize" -->
 <!-- 		clientId="MDY3MGVlZDUtZDViOS00" clientSecret="Mjg2OTY2NWItZTdjMS00" -->
-<!-- 		id="supplierroom" issuerIdentifier="https://w3id-test.sso.ibm.com/isam" -->
+<!-- 		id="dokiaroom" issuerIdentifier="https://w3id-test.sso.ibm.com/isam" -->
 <!-- 		signatureAlgorithm="RS256" sslRef="sslidp" -->
 <!-- 		tokenEndpointUrl="https://w3id-test.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/token" -->
 <!-- 		trustAliasName="w3idp" trustStoreRef="trustStore" -->
@@ -40,7 +40,7 @@
 		authorizationEndpointUrl="https://w3id.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/authorize"
 		clientId="OWY3ZTYxNGQtNWE1Ny00"
 		 clientSecret="YTEwNDQwMmItOTc2ZC00"
-		id="supplierroomprod"
+		id="dokiaroomprod"
 		issuerIdentifier="https://w3id.sso.ibm.com/isam"
 		signatureAlgorithm="RS256"
 		tokenEndpointUrl="https://w3id.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/token"

@@ -1,6 +1,6 @@
 {
     "/api/*":{
-      "target":"https://localhost:9443/supplier",
+      "target":"https://localhost:9443/dokia",
       "secure":false,
       "logLevel":"debug"
     }

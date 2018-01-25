@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
     styleUrls: ['./app.component.scss']
 })
 //teste authorize was
-//https://w3id-test.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/authorize?client_id=MDY3MGVlZDUtZDViOS00&redirect_uri=https://localhost:9443/supplier/api/auth
+//https://w3id-test.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/authorize?client_id=MDY3MGVlZDUtZDViOS00&redirect_uri=https://localhost:9443/dokia/api/auth
 export class AppComponent {
 
     constructor(private translate: TranslateService//,

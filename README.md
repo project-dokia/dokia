@@ -1,4 +1,4 @@
-# Supplier Room
+# Dokia
 
 This project contains a simple servlet application.
 
@@ -77,8 +77,8 @@ https://stackoverflow.com/questions/3736208/how-to-exclude-a-folder-that-is-prod
 
 # Deploy
 Alterar o server.xml assim:
-<webApplication id="supplier" location="supplier.war"
-		name="supplier">
+<webApplication id="dokia" location="dokia.war"
+		name="dokia">
 		<application-bnd>
 			<security-role name="AllAuthenticated">
 				<special-subject type="ALL_AUTHENTICATED_USERS" />

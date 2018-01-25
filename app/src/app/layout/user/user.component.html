@@ -1,4 +1,27 @@
 <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '20px' }"></ngx-loading>
 <div >    
-    xxxxxx
+    <section class="form-group row justify-content-between">
+        <div class="col-4 gap-top10 ">
+            <h5><b>Name</b></h5>
+        </div>
+        <div class="col-8 gap-top10">
+            <input type="text" name="user.name" id="user.name" class="form-control" [(ngModel)]="user.name" />
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-4 gap-top10 ">
+            <h5><b>Age</b></h5>
+        </div>
+        <div class="col-8 gap-top10">
+            <input type="text" name="user.age" id="user.age" class="form-control" [(ngModel)]="user.age" />
+        </div>
+    </section>
+    <section class="form-group row justify-content-between">
+        <div class="col-4 gap-top10 ">
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="addUser();">Save</button>
+            </div>
+        </div>
+    </section>        
 </div>    

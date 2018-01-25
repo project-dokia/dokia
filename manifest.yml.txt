@@ -1,8 +1,8 @@
 ---
 applications:
-- name: supplierroom
+- name: dokiaroom
   memory: 512M
-  host: supplierroom
+  host: dokiaroom
   domain: mybluemix.net
   path: defaultServer
   services:

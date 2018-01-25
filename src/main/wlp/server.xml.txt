@@ -15,7 +15,7 @@
 		<tcpOptions soReuseAddr="true" />
 	</httpEndpoint>
 
-	<openidConnectClient id="supplierroomprod" clientId="OWY3ZTYxNGQtNWE1Ny00"
+	<openidConnectClient id="dokiaroomprod" clientId="OWY3ZTYxNGQtNWE1Ny00"
 		clientSecret="YTEwNDQwMmItOTc2ZC00"
 		authorizationEndpointUrl="https://w3id.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/authorize"
 		tokenEndpointUrl="https://w3id.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/token"
@@ -29,8 +29,8 @@
 			matchType="contains" />
 	</authFilter>
 
-	<webApplication id="supplier" location="${appLocation}"
-		name="supplier" context-root="/supplier">
+	<webApplication id="dokia" location="${appLocation}"
+		name="dokia" context-root="/dokia">
 		<application-bnd>
 			<security-role name="AllAuthenticated">
 				<special-subject type="ALL_AUTHENTICATED_USERS" />

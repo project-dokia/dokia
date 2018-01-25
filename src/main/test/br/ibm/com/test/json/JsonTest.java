@@ -8,7 +8,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import ibm.com.supplier.dao.model.UserW3idToken;
+import ibm.com.dokia.dao.model.UserW3idToken;
 
 public class JsonTest {
 	

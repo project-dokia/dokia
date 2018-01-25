@@ -38,7 +38,7 @@
 	<keyStore id="defaultKeyStore" password="{xor}KD4sPjsyNjE=" />
 	<keyStore id="trustStore" password="{xor}KD4sPjsyNjE=" />
 
-	<openidConnectClient id="supplierroom" clientId="MDY3MGVlZDUtZDViOS00"
+	<openidConnectClient id="dokiaroom" clientId="MDY3MGVlZDUtZDViOS00"
 		clientSecret="Mjg2OTY2NWItZTdjMS00"
 		authorizationEndpointUrl="https://w3id-test.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/authorize"
 		tokenEndpointUrl="https://w3id-test.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/token"
@@ -74,8 +74,8 @@
 		<user name="wasadmin" password="{xor}KD4sPjsyNjE=" />
 	</basicRegistry>
 
-	<webApplication id="supplier" location="supplier.war"
-		name="supplier">
+	<webApplication id="dokia" location="dokia.war"
+		name="dokia">
 		<application-bnd>
 			<security-role name="AllAuthenticated">
 				<special-subject type="ALL_AUTHENTICATED_USERS" />

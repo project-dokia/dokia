@@ -28,47 +28,47 @@ export class UserService {
                 .catch(this.handleErrorObservable);
   }
 
-  updateUserWithObservable(user:User): Observable<String> {
-    const url = `${this.userUrl}` + "/update";
-    let options = new RequestOptions({ headers: this.headers });
+  // updateUserWithObservable(user:User): Observable<String> {
+  //   const url = `${this.userUrl}` + "/update";
+  //   let options = new RequestOptions({ headers: this.headers });
     
-    return this.http.post(url, user, options)
-                .map(res => res)
-                .catch(this.handleErrorObservable);
-  }
+  //   return this.http.post(url, user, options)
+  //               .map(res => res)
+  //               .catch(this.handleErrorObservable);
+  // }
 
-  suspendUserWithObservable(user:User): Observable<String> {
-    const url = `${this.userUrl}` + "/suspend";
-    let options = new RequestOptions({ headers: this.headers });
+  // suspendUserWithObservable(user:User): Observable<String> {
+  //   const url = `${this.userUrl}` + "/suspend";
+  //   let options = new RequestOptions({ headers: this.headers });
     
-    return this.http.post(url, user, options)
-                .map(res => res)
-                .catch(this.handleErrorObservable);
-  }
+  //   return this.http.post(url, user, options)
+  //               .map(res => res)
+  //               .catch(this.handleErrorObservable);
+  // }
 
-  getUsersObservable(): Observable<User[]> {
-    return this.http.get(this.userUrl)
-      .map(res => res.json())
-      .catch(this.handleErrorObservable);
-  }
+  // getUsersObservable(): Observable<User[]> {
+  //   return this.http.get(this.userUrl)
+  //     .map(res => res.json())
+  //     .catch(this.handleErrorObservable);
+  // }
 
-  getLogsUserObservable(_id:String): Observable<User[]> {
-    return this.http.get(this.userUrl + "/logs/" + _id)
-      .map(res => res.json())
-      .catch(this.handleErrorObservable);
-  }
+  // getLogsUserObservable(_id:String): Observable<User[]> {
+  //   return this.http.get(this.userUrl + "/logs/" + _id)
+  //     .map(res => res.json())
+  //     .catch(this.handleErrorObservable);
+  // }
 
-  getUserByUIDObservable(uid:String): Observable<User> {
-    return this.http.get(this.userUrl + "/" + uid)
-      .map(res => res.json()[0])
-      .catch(this.handleErrorObservable);
-  }
+  // getUserByUIDObservable(uid:String): Observable<User> {
+  //   return this.http.get(this.userUrl + "/" + uid)
+  //     .map(res => res.json()[0])
+  //     .catch(this.handleErrorObservable);
+  // }
 
-  getVerifyUserByUIDObservable(uid:String): Observable<boolean> {
-    return this.http.get(this.userUrl + "/verify/" + uid)
-      .map(res => res.json())
-      .catch(this.handleErrorObservable);
-  }
+  // getVerifyUserByUIDObservable(uid:String): Observable<boolean> {
+  //   return this.http.get(this.userUrl + "/verify/" + uid)
+  //     .map(res => res.json())
+  //     .catch(this.handleErrorObservable);
+  // }
 
 
   private handleErrorObservable (error: Response | any) {

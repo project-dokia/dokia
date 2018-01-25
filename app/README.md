@@ -86,7 +86,7 @@ Redux DevTools
 ### Build Prod
 ng build --base-href "" --prod
 
-ng build --base-href "http://supplier.mybluemix.net/" --prod
+ng build --base-href "http://dokia.mybluemix.net/" --prod
 
 ### Toolchain
 #!/bin/bash
@@ -97,15 +97,15 @@ export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
 npm -v
 node -v
 npm install -g -f ls
-cd supplier-front
+cd dokia-front
 pwd
 ls
-ng build --base-href "https://supplier.mybluemix.net/" --prod
+ng build --base-href "https://dokia.mybluemix.net/" --prod
 # modo debug:
-ng build --base-href "https://supplier.mybluemix.net/" --prod --verbose > aFile.txt
-ng build --base-href "https://supplierroom.mybluemix.net/" --prod
-ng build --base-href "https://supplier2.mybluemix.net/" --prod
-ng build --base-href "https://localhost:9443/supplier/" --dev
+ng build --base-href "https://dokia.mybluemix.net/" --prod --verbose > aFile.txt
+ng build --base-href "https://dokiaroom.mybluemix.net/" --prod
+ng build --base-href "https://dokia2.mybluemix.net/" --prod
+ng build --base-href "https://localhost:9443/dokia/" --dev
 cd ..
 mvn -B package
 
