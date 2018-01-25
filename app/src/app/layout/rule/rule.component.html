@@ -2,24 +2,24 @@
 <div>    
     <section class="form-group row justify-content-between">
         <div class="col-4 gap-top10 ">
-            <h5><b>Name</b></h5>
+            <h5><b>name</b></h5>
         </div>
         <div class="col-8 gap-top10">
-            <input type="text" name="user.name" id="user.name" class="form-control" [(ngModel)]="user.name" />
+            <input type="text" name="rule.name" id="rule.name" class="form-control" [(ngModel)]="rule.name" />
         </div>
     </section>
 
     <section class="form-group row justify-content-between">
         <div class="col-4 gap-top10 ">
-            <h5><b>Age</b></h5>
+            <h5><b>Type</b></h5>
         </div>
         <div class="col-8 gap-top10">
-            <input type="text" name="user.age" id="user.age" class="form-control" [(ngModel)]="user.age" />
+            <input type="text" name="rule.typeRule" id="rule.typeRule" class="form-control" [(ngModel)]="rule.typeRule" />
         </div>
     </section>
     <section class="form-group row justify-content-between">
         <div class="col-12 gap-top10 ">
-            <button type="button" class="btn btn-primary" (click)="addUser();">Save</button>
+            <button type="button" class="btn btn-primary" (click)="addRule();">Save</button>
         </div>
     </section>        
 </div>    

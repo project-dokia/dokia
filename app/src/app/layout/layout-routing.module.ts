@@ -7,6 +7,7 @@ const routes: Routes = [
         path: '', component: LayoutComponent,
         children: [
             { path: 'user', loadChildren: './user/user.module#UserModule' },
+            { path: 'rule', loadChildren: './rule/rule.module#RuleModule' },
         ]
     }
 ];
