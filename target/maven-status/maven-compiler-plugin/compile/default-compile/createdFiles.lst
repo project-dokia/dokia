@@ -1,0 +1,15 @@
+resolv/com/dokia/ws/UserWS.class
+resolv/com/dokia/filters/CorsFilter.class
+resolv/com/dokia/ws/ApplicationApis.class
+resolv/com/dokia/filters/RedirectFilter.class
+resolv/com/dokia/dao/conn/CloudantClientMgr.class
+wasdev/sample/servlet/SimpleServlet.class
+resolv/com/dokia/dao/model/Rule.class
+resolv/com/dokia/filters/ConnFilter.class
+resolv/com/dokia/utils/OpenstackStorage.class
+resolv/com/dokia/controller/UserController.class
+br/resolv/com/utils/JavaException.class
+resolv/com/dokia/utils/LogTratative.class
+br/resolv/com/utils/MyUtils.class
+resolv/com/dokia/dao/model/User.class
+resolv/com/dokia/ws/RuleWS.class
