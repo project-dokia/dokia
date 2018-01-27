@@ -1,0 +1,25 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '20px' }"></ngx-loading>
+<div>    
+    <section class="form-group row justify-content-between">
+        <div class="col-4 gap-top10 ">
+            <h5><b>name</b></h5>
+        </div>
+        <div class="col-8 gap-top10">
+            <input type="text" name="company.name" id="company.name" class="form-control" [(ngModel)]="company.name" />
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-4 gap-top10 ">
+            <h5><b>Type</b></h5>
+        </div>
+        <div class="col-8 gap-top10">
+            <input type="text" name="company.typeCompany" id="company.typeCompany" class="form-control" [(ngModel)]="company.typeCompany" />
+        </div>
+    </section>
+    <section class="form-group row justify-content-between">
+        <div class="col-12 gap-top10 ">
+            <button type="button" class="btn btn-primary" (click)="addCompany();">Save</button>
+        </div>
+    </section>        
+</div>    
