@@ -33,7 +33,6 @@ export class ListUserComponent implements OnInit {
     
     this.idWallet  = this.router.url.split('wallet/').pop().split('/users').shift();
     this.idCompany = this.router.url.split('company/').pop().split('/wallet').shift();
-
     
     this.getListUser();
     

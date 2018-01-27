@@ -1,25 +1,53 @@
 <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '20px' }"></ngx-loading>
 <div>    
     <section class="form-group row justify-content-between">
-        <div class="col-4 gap-top10 ">
+        <div class="col-2 gap-top10 ">
+            <h5><b>ID Company</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <h5>{{idCompany}}</h5>
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+            <div class="col-2 gap-top10 ">
+                <h5><b>ID Wallet</b></h5>
+            </div>
+            <div class="col-10 gap-top10">
+                <h5>{{user.idWallet}}</h5>
+            </div>
+        </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>Code</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <input type="text" name="user.idSIR" id="user.idSIR" class="form-control" [(ngModel)]="user.idSIR" />
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>CPF</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <input type="text" name="user.cpf" id="user.cpf" class="form-control" [(ngModel)]="user.cpf" />
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
             <h5><b>Name</b></h5>
         </div>
-        <div class="col-8 gap-top10">
+        <div class="col-10 gap-top10">
             <input type="text" name="user.name" id="user.name" class="form-control" [(ngModel)]="user.name" />
         </div>
     </section>
 
     <section class="form-group row justify-content-between">
-        <div class="col-4 gap-top10 ">
-            <h5><b>Age</b></h5>
-        </div>
-        <div class="col-8 gap-top10">
-            <input type="text" name="user.age" id="user.age" class="form-control" [(ngModel)]="user.age" />
-        </div>
-    </section>
-    <section class="form-group row justify-content-between">
-        <div class="col-12 gap-top10 ">
-            <button type="button" class="btn btn-primary" (click)="addUser();">Save</button>
+        <div class="col-4 offset-4 gap-top10 ">
+            <button type="button" class="btn background-button form-control" (click)="addUser();">Save</button>
         </div>
     </section>        
 </div>    

@@ -6,6 +6,5 @@ export class Wallet {
         public description: string,
         public type: string,
         public idCompany: string,
-    ){ }
-   
+    ){ }  
 }

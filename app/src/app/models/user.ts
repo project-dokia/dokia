@@ -2,7 +2,8 @@ export class User {
         type: string;
         _id: string;
         _rev: string;
+        cpf: string;
         name: string;
-        age: string;
+        idSIR: string;
         idWallet:string;
 }

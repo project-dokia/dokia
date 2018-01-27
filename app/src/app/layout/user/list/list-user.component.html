@@ -3,7 +3,8 @@
     <section>
         <div class="row">
             <div class="col-12 text-right">
-                <i class="fa fa-plus-square fa-2x click" aria-hidden="true" [routerLink]="['/company/', idCompany, 'wallet', idWallet, 'user', 'add']"></i>
+                <label [routerLink]="['/company/', idCompany, 'wallet', idWallet, 'user', 'add']"><h5>ADICIONAR
+                <i class="fa fa-plus-square fa-2x click gap-top5" aria-hidden="true" ></i></h5></label>
             </div>
         </div> 
     </section>
@@ -12,16 +13,25 @@
             <table class="table table-striped table-responsive table-bordered form-control ">
                 <thead>
                     <tr>
+                        <th class="text-center">ID User</th>
+                        <th class="text-center">ID Wallet</th>
+                        <th class="text-center">ID Company</th>
+                        <th class="text-center">idSIR</th>
+                        <th class="text-center">CPF</th>
                         <th class="text-center">Name</th>
-                        <th class="text-center">Type</th>
-                        <th class="text-center">Next</th>
+                        <th class="text-center">NEXT</th>
                     </tr>
                 </thead>
-                <tbody >
+                <tbody>
                     <tr *ngFor="let user of listUser" id="{{user._id}}">
+                        <td class="text-right">{{user._id}}</td>
+                        <td class="text-right">{{user.idWallet}}</td>
+                        <td class="text-right">{{idCompany}}</td>
+                        <td class="text-left"> {{user.idSIR}}</td>
+                        <td class="text-right">{{user.cpf}}</td>
                         <td class="text-right">{{user.name}}</td>
-                        <td class="text-right">{{user.typeUser}}</td>
-                        <td class="text-right">NEXT</td>
+                        <!-- [routerLink]="['/company/', idCompany, 'wallet', wallet._id, 'users']" -->
+                        <td class="text-center">NEXT</td>
                     </tr>
                 </tbody>
             </table>

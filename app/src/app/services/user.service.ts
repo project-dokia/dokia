@@ -34,8 +34,8 @@ export class UserService {
       .catch(this.handleErrorObservable);
   }
 
-  getUsersByIDWalletObservable(idWallet:String): Observable<User[]> {
-    return this.http.get(this.userUrl + "/" + idWallet)
+  getUsersByIDWalletObservable(idUser:String): Observable<User[]> {
+    return this.http.get(this.userUrl + "/" + idUser)
       .map(res => res.json())
       .catch(this.handleErrorObservable);
   }

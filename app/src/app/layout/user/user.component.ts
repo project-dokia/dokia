@@ -23,6 +23,7 @@ import { routerTransition } from '../../router.animations';
 export class UserComponent implements OnInit {
   user: User;
   idWallet: string;
+  idCompany: string;
   
   constructor(
     private router: Router,
@@ -32,6 +33,8 @@ export class UserComponent implements OnInit {
   ngOnInit() : void {
     this.user = new User();
     this.idWallet = this.router.url.split('wallet/').pop().split('/user/add').shift();
+
+    this.idCompany = this.router.url.split('company/').pop().split('/wallet').shift();
 
     this.user.idWallet = this.idWallet;
   }
