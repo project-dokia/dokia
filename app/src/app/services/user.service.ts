@@ -28,6 +28,19 @@ export class UserService {
                 .catch(this.handleErrorObservable);
   }
 
+  getUserObservable(): Observable<User[]> {
+    return this.http.get(this.userUrl)
+      .map(res => res.json())
+      .catch(this.handleErrorObservable);
+  }
+
+  getUsersByIDWalletObservable(idWallet:String): Observable<User[]> {
+    return this.http.get(this.userUrl + "/" + idWallet)
+      .map(res => res.json())
+      .catch(this.handleErrorObservable);
+  }
+
+
   // updateUserWithObservable(user:User): Observable<String> {
   //   const url = `${this.userUrl}` + "/update";
   //   let options = new RequestOptions({ headers: this.headers });
@@ -48,12 +61,6 @@ export class UserService {
 
   // getUsersObservable(): Observable<User[]> {
   //   return this.http.get(this.userUrl)
-  //     .map(res => res.json())
-  //     .catch(this.handleErrorObservable);
-  // }
-
-  // getLogsUserObservable(_id:String): Observable<User[]> {
-  //   return this.http.get(this.userUrl + "/logs/" + _id)
   //     .map(res => res.json())
   //     .catch(this.handleErrorObservable);
   // }

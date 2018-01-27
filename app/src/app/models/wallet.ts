@@ -4,4 +4,5 @@ export class Wallet {
     _rev: string;
     name: string;
     typeWallet: string;
+    idCompany: string;
 }

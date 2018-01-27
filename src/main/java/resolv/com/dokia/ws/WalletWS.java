@@ -2,18 +2,21 @@ package resolv.com.dokia.ws;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.cloudant.client.api.Database;
+import com.cloudant.client.api.model.FindByIndexOptions;
 import com.cloudant.client.api.views.Key;
 import com.cloudant.client.api.views.ViewResponse;
 import com.google.gson.Gson;
@@ -42,6 +45,15 @@ public class WalletWS {
 			System.out.println("id="+resp.getId());
 		}
 		return Response.status(200).entity("ok").build();
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/{idCompany}")
+	public Response getById(@PathParam("idCompany") String idCompany) {
+		Database conn = MyUtils.getStoredConnection(request);
+		List<Object> list = conn.findByIndex("{\"idCompany\": \"" + idCompany + "\"}", Object.class, new FindByIndexOptions());
+		return Response.status(200).entity(list).build();
 	}
 	
 	@GET

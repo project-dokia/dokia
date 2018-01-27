@@ -3,7 +3,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 import { Cost } from '../../models/cost';
 
-import { CompanyService } from '../../services/cost.service';
+import { CostService } from '../../services/cost.service';
 
 import { elementTransition } from '../../element.animations';
 import { routerTransition } from '../../router.animations';
@@ -12,24 +12,24 @@ import { routerTransition } from '../../router.animations';
   selector: 'app-cost',
   templateUrl: './cost.component.html',
   styleUrls: ['./cost.component.scss'],
-  // declarations: [CompanyPipe],
-  providers: [CompanyService],
+  // declarations: [CostPipe],
+  providers: [CostService],
   animations: [routerTransition(), elementTransition()]
 })
 
-export class CompanyComponent implements OnInit {
+export class CostComponent implements OnInit {
   cost: Cost;
   
   constructor(
-    private costService: CompanyService,
+    private costService: CostService,
     private modalService: NgbModal) {}
 
   ngOnInit() : void {
     this.cost = new Cost();
   }
 
-  public addCompany() {
-    this.costService.addCompanyWithObservable(this.cost)
+  public addCost() {
+    this.costService.addCostWithObservable(this.cost)
     .subscribe( res => {
 
       alert("Adicionado!");

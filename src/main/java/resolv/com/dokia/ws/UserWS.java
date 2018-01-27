@@ -55,6 +55,15 @@ public class UserWS {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/{idWallet}")
+	public Response getById(@PathParam("idWallet") String idWallet) {
+		Database conn = MyUtils.getStoredConnection(request);
+		List<Object> list = conn.findByIndex("{\"idWallet\": \"" + idWallet + "\"}", Object.class, new FindByIndexOptions());
+		return Response.status(200).entity(list).build();
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response getUsers() {	
 		
 		Database conn = MyUtils.getStoredConnection(request);

@@ -4,4 +4,5 @@ export class User {
         _rev: string;
         name: string;
         age: string;
+        idWallet:string;
 }

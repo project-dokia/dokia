@@ -28,6 +28,11 @@ export class RuleService {
                 .catch(this.handleErrorObservable);
   }
 
+  getRuleObservable(): Observable<Rule[]> {
+    return this.http.get(this.ruleUrl)
+      .map(res => res.json())
+      .catch(this.handleErrorObservable);
+  }
 
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);

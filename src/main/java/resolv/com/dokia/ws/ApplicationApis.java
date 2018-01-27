@@ -14,6 +14,10 @@ public class ApplicationApis extends Application {
         Set<Class<?>> classes = new HashSet<Class<?>>();
         classes.add(UserWS.class);
         classes.add(RuleWS.class);
+        classes.add(CompanyWS.class);
+        classes.add(CostWS.class);
+        classes.add(DocumentWS.class);
+        classes.add(WalletWS.class);
         return classes;
     }
 }

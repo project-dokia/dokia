@@ -4,6 +4,7 @@ export class User {
         public _rev: string,
         public name: string,
         public age: string,
+        public idWallet: string,
     ){ }
    
 }

@@ -28,6 +28,12 @@ export class CompanyService {
                 .catch(this.handleErrorObservable);
   }
 
+  getCompanyObservable(): Observable<Company[]> {
+    return this.http.get(this.companyUrl)
+      .map(res => res.json())
+      .catch(this.handleErrorObservable);
+  }
+
 
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);

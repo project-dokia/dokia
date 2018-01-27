@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
+
+import { Router } from '@angular/router';
 import { Wallet } from '../../models/wallet';
 
-import { CompanyService } from '../../services/wallet.service';
+import { WalletService } from '../../services/wallet.service';
 
 import { elementTransition } from '../../element.animations';
 import { routerTransition } from '../../router.animations';
@@ -12,24 +14,34 @@ import { routerTransition } from '../../router.animations';
   selector: 'app-wallet',
   templateUrl: './wallet.component.html',
   styleUrls: ['./wallet.component.scss'],
-  // declarations: [CompanyPipe],
-  providers: [CompanyService],
+  // declarations: [WalletPipe],
+  providers: [WalletService],
   animations: [routerTransition(), elementTransition()]
 })
 
-export class CompanyComponent implements OnInit {
+export class WalletComponent implements OnInit {
   wallet: Wallet;
-  
+  idCompany: string;
+
   constructor(
-    private walletService: CompanyService,
+    private router: Router,
+    private walletService: WalletService,
     private modalService: NgbModal) {}
 
   ngOnInit() : void {
     this.wallet = new Wallet();
+
+    this.idCompany = this.router.url;
+
+
+    this.idCompany = this.router.url.split('company/').pop().split('/wallet/add').shift();
+    
+
+    this.wallet.idCompany = this.idCompany;
   }
 
-  public addCompany() {
-    this.walletService.addCompanyWithObservable(this.wallet)
+  public addWallet() {
+    this.walletService.addWalletWithObservable(this.wallet)
     .subscribe( res => {
 
       alert("Adicionado!");

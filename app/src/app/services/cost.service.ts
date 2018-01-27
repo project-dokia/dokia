@@ -28,6 +28,11 @@ export class CostService {
                 .catch(this.handleErrorObservable);
   }
 
+  getCostObservable(): Observable<Cost[]> {
+    return this.http.get(this.costUrl)
+      .map(res => res.json())
+      .catch(this.handleErrorObservable);
+  }
 
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);

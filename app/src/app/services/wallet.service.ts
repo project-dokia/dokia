@@ -28,6 +28,17 @@ export class WalletService {
                 .catch(this.handleErrorObservable);
   }
 
+  getWalletObservable(): Observable<Wallet[]> {
+    return this.http.get(this.walletUrl)
+      .map(res => res.json())
+      .catch(this.handleErrorObservable);
+  }
+
+  getWalletByIDCompanyObservable(idCompany:String): Observable<Wallet[]> {
+    return this.http.get(this.walletUrl + "/" + idCompany)
+      .map(res => res.json())
+      .catch(this.handleErrorObservable);
+  }
 
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);

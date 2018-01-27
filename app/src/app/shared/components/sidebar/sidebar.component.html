@@ -1,27 +1,31 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
-	<ul class="list-group">
-		<a routerLink="/user" [routerLinkActive]="['router-link-active']"
+	<!-- <ul class="list-group">
+		<a routerLink="/user/list" [routerLinkActive]="['router-link-active']"
 			class="list-group-item"> <i class="fa fa-fw fa-info-circle"></i>&nbsp;User
 		</a>
 	</ul>
+
 	<ul class="list-group">
-		<a routerLink="/rule" [routerLinkActive]="['router-link-active']"
+		<a routerLink="/cost/list" [routerLinkActive]="['router-link-active']"
+			class="list-group-item"> <i class="fa fa-fw fa-info-circle"></i>&nbsp;Cost
+		</a>
+	</ul>
+	
+	<ul class="list-group">
+		<a routerLink="/wallet/list" [routerLinkActive]="['router-link-active']"
+			class="list-group-item"> <i class="fa fa-fw fa-info-circle"></i>&nbsp;Wallet
+		</a>
+	</ul>
+
+	<ul class="list-group">
+		<a routerLink="/rule/list" [routerLinkActive]="['router-link-active']"
 			class="list-group-item"> <i class="fa fa-fw fa-info-circle"></i>&nbsp;Rule
 		</a>
-	</ul>
+	</ul> -->
+
 	<ul class="list-group">
-		<a routerLink="/cost" [routerLinkActive]="['router-link-active']"
-			class="list-group-item"> <i class="fa fa-fw fa-info-circle"></i>&nbsp;cost
-		</a>
-	</ul>
-	<ul class="list-group">
-		<a routerLink="/wallet" [routerLinkActive]="['router-link-active']"
-			class="list-group-item"> <i class="fa fa-fw fa-info-circle"></i>&nbsp;wallet
-		</a>
-	</ul>
-	<ul class="list-group">
-		<a routerLink="/company" [routerLinkActive]="['router-link-active']"
-			class="list-group-item"> <i class="fa fa-fw fa-info-circle"></i>&nbsp;company
+		<a routerLink="/companys" [routerLinkActive]="['router-link-active']"
+			class="list-group-item"> <i class="fa fa-fw fa-info-circle"></i>&nbsp;Company
 		</a>
 	</ul>
 </nav>

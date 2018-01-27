@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
+
+import { Router } from '@angular/router';
 import { User } from '../../models/user';
 
 import { UserService } from '../../services/user.service';
@@ -20,13 +22,18 @@ import { routerTransition } from '../../router.animations';
 
 export class UserComponent implements OnInit {
   user: User;
+  idWallet: string;
   
   constructor(
+    private router: Router,
     private userService: UserService,
     private modalService: NgbModal) {}
 
   ngOnInit() : void {
     this.user = new User();
+    this.idWallet = this.router.url.split('wallet/').pop().split('/user/add').shift();
+
+    this.user.idWallet = this.idWallet;
   }
 
   public addUser() {
