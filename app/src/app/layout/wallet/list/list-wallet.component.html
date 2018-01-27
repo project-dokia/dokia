@@ -3,7 +3,8 @@
     <section>
         <div class="row">
             <div class="col-12 text-right">
-                <i class="fa fa-plus-square fa-2x click" aria-hidden="true" [routerLink]="['/company/', idCompany, 'wallet','add']"></i>
+                <label [routerLink]="['/company/', idCompany, 'wallet','add']"><h5>ADICIONAR
+                <i class="fa fa-plus-square fa-2x click gap-top5" aria-hidden="true" ></i></h5></label>
             </div>
         </div> 
     </section>
@@ -12,16 +13,20 @@
             <table class="table table-striped table-responsive table-bordered form-control ">
                 <thead>
                     <tr>
-                        <th class="text-center">Name</th>
-                        <th class="text-center">Type</th>
+                        <th class="text-center">ID Wallet</th>
+                        <th class="text-center">ID Company</th>
+                        <th class="text-center">Code</th>
+                        <th class="text-center">Description</th>
                         <th class="text-center">Next</th>
                     </tr>
                 </thead>
                 <tbody >
                     <tr *ngFor="let wallet of listWallet" id="{{wallet._id}}">
-                        <td class="text-right">{{wallet.name}}</td>
-                        <td class="text-right">{{wallet.typeWallet}}</td>
-                        <td class="text-right" [routerLink]="['/company/', idCompany, 'wallet', wallet._id, 'users']">NEXT</td>
+                        <td class="text-right">{{wallet._id}}</td>
+                        <td class="text-right">{{wallet.idCompany}}</td>
+                        <td class="text-right">{{wallet.code}}</td>
+                        <td class="text-left">{{wallet.description}}</td>
+                        <td class="text-center" [routerLink]="['/company/', idCompany, 'wallet', wallet._id, 'users']">NEXT</td>
                     </tr>
                 </tbody>
             </table>

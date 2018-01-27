@@ -1,25 +1,35 @@
 <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '20px' }"></ngx-loading>
 <div>    
     <section class="form-group row justify-content-between">
-        <div class="col-4 gap-top10 ">
-            <h5><b>name</b></h5>
+        <div class="col-2 gap-top10 ">
+            <h5><b>ID Company</b></h5>
         </div>
-        <div class="col-8 gap-top10">
-            <input type="text" name="wallet.name" id="wallet.name" class="form-control" [(ngModel)]="wallet.name" />
+        <div class="col-10 gap-top10">
+            <h5>{{wallet.idCompany}}</h5>
         </div>
     </section>
 
     <section class="form-group row justify-content-between">
-        <div class="col-4 gap-top10 ">
-            <h5><b>Type</b></h5>
+        <div class="col-2 gap-top10 ">
+            <h5><b>Code</b></h5>
         </div>
-        <div class="col-8 gap-top10">
-            <input type="text" name="wallet.typeWallet" id="wallet.typeWallet" class="form-control" [(ngModel)]="wallet.typeWallet" />
+        <div class="col-10 gap-top10">
+            <input type="text" name="wallet.code" id="wallet.code" class="form-control" [(ngModel)]="wallet.code" />
         </div>
     </section>
+
     <section class="form-group row justify-content-between">
-        <div class="col-12 gap-top10 ">
-            <button type="button" class="btn btn-primary" (click)="addWallet();">Save</button>
+        <div class="col-2 gap-top10 ">
+            <h5><b>Description</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <input type="text" name="wallet.description" id="wallet.description" class="form-control" [(ngModel)]="wallet.description" />
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-4 offset-4 gap-top10 ">
+            <button type="button" class="btn background-button form-control" (click)="addWallet();">Save</button>
         </div>
     </section>        
 </div>    

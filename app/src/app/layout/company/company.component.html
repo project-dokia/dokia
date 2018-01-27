@@ -1,25 +1,26 @@
 <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '20px' }"></ngx-loading>
 <div>    
     <section class="form-group row justify-content-between">
-        <div class="col-4 gap-top10 ">
-            <h5><b>name</b></h5>
+        <div class="col-2 gap-top10 ">
+            <h5><b>Name Reason</b></h5>
         </div>
-        <div class="col-8 gap-top10">
-            <input type="text" name="company.name" id="company.name" class="form-control" [(ngModel)]="company.name" />
+        <div class="col-10 gap-top10">
+            <input type="text" name="company.nameReason" id="company.nameReason" class="form-control" [(ngModel)]="company.nameReason" />
         </div>
     </section>
 
     <section class="form-group row justify-content-between">
-        <div class="col-4 gap-top10 ">
-            <h5><b>Type</b></h5>
+        <div class="col-2 gap-top10 ">
+            <h5><b>CNPJ</b></h5>
         </div>
-        <div class="col-8 gap-top10">
-            <input type="text" name="company.typeCompany" id="company.typeCompany" class="form-control" [(ngModel)]="company.typeCompany" />
+        <div class="col-10 gap-top10">
+            <input type="text" name="company.cnpj" id="company.cnpj" class="form-control" [(ngModel)]="company.cnpj" />
         </div>
     </section>
+
     <section class="form-group row justify-content-between">
-        <div class="col-12 gap-top10 ">
-            <button type="button" class="btn btn-primary" (click)="addCompany();">Save</button>
+        <div class="col-4 offset-4 gap-top10 ">
+            <button type="button" class="btn background-button form-control" (click)="addCompany();">Save</button>
         </div>
     </section>        
 </div>    

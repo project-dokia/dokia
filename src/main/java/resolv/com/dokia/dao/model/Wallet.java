@@ -2,23 +2,21 @@ package resolv.com.dokia.dao.model;
 
 public class Wallet {
 
-	private String typeWallet;
-	private String name;
+	private String code;
+	private String description;
 	private String type;
 	private String _id;
 	private String _rev;
 	private String idCompany;
     
-	public Wallet(String name, String typeWallet, String _id, String _rev, String type, String idCompany) {
-		this.name = name;
-		this.typeWallet = typeWallet;
+	public Wallet(String code, String description, String _id, String _rev, String type, String idCompany) {
+		this.code = code;
+		this.description = description;
 		this._id = _id;
 		this._rev = _rev;
 		this.type = type;
 		this.idCompany = idCompany;
 	}
-	
-	
 	
 	
 	public String getIdCompany() {
@@ -33,29 +31,31 @@ public class Wallet {
 	}
 
 
-
-
-	public String getTypeWallet() {
-		return typeWallet;
+	public String getCode() {
+		return code;
 	}
 
 
 
-	public void setTypeWallet(String typeWallet) {
-		this.typeWallet = typeWallet;
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 
 
-	public String getName() {
-		return name;
+
+	public String getDescription() {
+		return description;
 	}
 
 
 
-	public void setName(String name) {
-		this.name = name;
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
+
 
 
 

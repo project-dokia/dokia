@@ -2,15 +2,15 @@ package resolv.com.dokia.dao.model;
 
 public class Company {
 
-	private String typeCompany;
-	private String name;
+	private String nameReason;
+	private String cnpj;
 	private String type;
 	private String _id;
 	private String _rev;
     
-	public Company(String name, String typeCompany, String _id, String _rev, String type) {
-		this.name = name;
-		this.typeCompany = typeCompany;
+	public Company(String nameReason, String cnpj, String _id, String _rev, String type) {
+		this.nameReason = nameReason;
+		this.cnpj = cnpj;
 		this._id = _id;
 		this._rev = _rev;
 		this.type = type;
@@ -28,20 +28,20 @@ public class Company {
 		this.type = type;
 	}
 
-	public String getTypeCompany() {
-		return typeCompany;
+	public String getNameReason() {
+		return nameReason;
 	}
 
-	public void setTypeCompany(String typeCompany) {
-		this.typeCompany = typeCompany;
+	public void setNameReason(String nameReason) {
+		this.nameReason = nameReason;
 	}
 
-	public String getName() {
-		return name;
+	public String getCnpj() {
+		return cnpj;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 
 	public String get_id() {
