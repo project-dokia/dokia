@@ -22,13 +22,15 @@ const routes: Routes = [
 
             { path: 'companys', loadChildren: './company/list/list-company.module#ListCompanyModule' },
             { path: 'company/add', loadChildren: './company/company.module#CompanyModule' },
+            
             { path: 'company/:id/wallet/add', loadChildren: './wallet/wallet.module#WalletModule' },
             { path: 'company/:id/wallets', loadChildren: './wallet/list/list-wallet.module#ListWalletModule' },
             
             { path: 'company/:id/wallet/:id/user/add', loadChildren: './user/user.module#UserModule' },
             { path: 'company/:id/wallet/:id/users', loadChildren: './user/list/list-user.module#ListUserModule' },
             
-                    
+            { path: 'company/:id/wallet/:id/user/:id/process/add', loadChildren: './process/process.module#ProcessModule' },
+            { path: 'company/:id/wallet/:id/user/:id/process', loadChildren: './process/list/list-process.module#ListProcessModule' },        
         ]
     }
 ];

@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ProcessComponent } from './process.component';
+import { ListProcessComponent } from './list-process.component';
 
 const routes: Routes = [
-    { path: '', component: ProcessComponent }
+    { path: '', component: ListProcessComponent }
 ];
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class ProcessRoutingModule { }
+export class ListProcessRoutingModule { }

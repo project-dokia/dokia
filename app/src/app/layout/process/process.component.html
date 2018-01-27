@@ -1,0 +1,44 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '20px' }"></ngx-loading>
+<div>    
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>ID Company</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <h5>{{idCompany}}</h5>
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>ID Wallet</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <h5>{{idWallet}}</h5>
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>ID User</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <h5>{{process.idUser}}</h5>
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>Number Process</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <input type="text" name="process.numberProcess" id="process.numberProcess" class="form-control" [(ngModel)]="process.numberProcess" />
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-4 offset-4 gap-top10 ">
+            <button type="button" class="btn background-button form-control" (click)="addProcess();">Save</button>
+        </div>
+    </section>        
+</div>    

@@ -27,7 +27,7 @@ public class User {
 	}
 
 	public void setCpf(String cpf) {
-		this.cpf = cpf;
+		this.cpf = cpf; 
 	}
 
 	public String getIdSIR() {
@@ -53,8 +53,6 @@ public class User {
 	public void set_rev(String _rev) {
 		this._rev = _rev;
 	}
-
-
 
 	public String getIdWallet() {
 		return idWallet;

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ProcessRoutingModule } from './process-routing.module';
-import { ProcessComponent } from './process.component';
-import { PageHeaderModule } from './../../shared';
+import { ListProcessRoutingModule } from './list-process-routing.module';
+import { ListProcessComponent } from './list-process.component';
+import { PageHeaderModule } from './../../../shared';
 import { LoadingModule } from 'ngx-loading';
 import { MatTabsModule, MatCardModule, MatSelectModule } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -11,7 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   imports: [
     CommonModule,
-    ProcessRoutingModule,
+    ListProcessRoutingModule,
     FormsModule,
     PageHeaderModule,
     MatTabsModule,
@@ -20,6 +20,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatSelectModule,
     NgbModule
   ],
-  declarations: [ProcessComponent]
+  declarations: [ListProcessComponent]
 })
-export class ProcessModule { }
+export class ListProcessModule { }
