@@ -23,7 +23,7 @@ import { User } from 'app/models/user';
 import { Company } from 'app/models/company';
 import { Expense } from 'app/models/expense';
 import { Wallet } from 'app/models/wallet';
-import { DocSend } from 'app/models/docsend';
+import { DocSend } from 'app/models/docSend';
 import { Lot } from 'app/models/lot';
 
 @Component({
@@ -83,6 +83,8 @@ export class DocumentComponent implements OnInit {
     this.docSend.cpf = "45084552802";
     this.docSend.lot = "123";
     this.docSend.requestedValue = "R$10,50";
+    this.docSend.approveRule = "false";
+    this.docSend.approvePerson = "false";
 
     this.getInfos();
   }

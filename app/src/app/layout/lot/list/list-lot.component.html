@@ -20,7 +20,7 @@
                 <tbody>
                     <tr *ngFor="let lot of listLot" id="{{lot._id}}">
                         <td class="text-right">{{lot.code}}</td>
-                        <td class="text-right">NEXT</td>
+                        <td class="text-right" [routerLink]="['/lot/', lot.code]">NEXT</td>
                     </tr>
                 </tbody>
             </table>

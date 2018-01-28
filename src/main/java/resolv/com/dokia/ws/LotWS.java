@@ -29,7 +29,7 @@ public class LotWS {
 	
 	public DocSend d = null;
 	public ArrayList<Object> listAllDocuments  = new ArrayList<Object>();
-	private DocSend document;
+	private Lot lotDoc;
 	private String documentJson = null;
 	private Gson gson = new Gson();
 	String[] lots;
@@ -54,7 +54,7 @@ public class LotWS {
 		Database conn = MyUtils.getStoredConnection(request);
 		ViewResponse<String, Object> list = null;		
 		
-		ArrayList<DocSend> docSendtlist = new ArrayList<DocSend>();
+		ArrayList<Lot> docSendtlist = new ArrayList<Lot>();
 		
 		try {
 			
@@ -70,25 +70,25 @@ public class LotWS {
 			for(int i = 0; i < list.getRows().size(); i ++) {
 				String documentJson = list.getRows().get(i).getValue().toString();
 				documentJson = LogTratative.replaceJson(documentJson);
-				document = gson.fromJson(documentJson, DocSend.class);
+				lotDoc = gson.fromJson(documentJson, Lot.class);
 				
 				boolean contains = false;
 				
 				if(lots.length > 0) {
-					for(String project : lots) {
-						if(project == null) {
-							project = "";
+					for(String lot : lots) {
+						if(lot == null) {
+							lot = "";
 						} 
 						
-						if(project.equals(document.getLot())) {
+						if(lot.equals(lotDoc.getCode())) {
 							contains = true;
 						}
 					}
 				}
 				
 				if(!contains) {
-					lots[i] = document.getLot();
-					docSendtlist.add(document);
+					lots[i] = lotDoc.getCode();
+					docSendtlist.add(lotDoc);
 				}
 				
 			}

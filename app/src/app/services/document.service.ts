@@ -40,6 +40,15 @@ export class DocumentService {
       .catch(this.handleErrorObservable);
   }
 
+
+  getDocumentsByIDLotObservable(idLot:String): Observable<DocSend[]> {
+    return this.http.get(this.documentUrl + "/code/" + idLot)
+      .map(res => res.json())
+      .catch(this.handleErrorObservable);
+  }
+
+  
+
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);
     return Observable.throw(error.message || error);

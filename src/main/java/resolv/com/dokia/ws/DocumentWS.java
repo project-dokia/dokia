@@ -59,5 +59,14 @@ public class DocumentWS {
 		return Response.status(200).entity(list).build();
 	}
 	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/code/{code}")
+	public Response getByCode(@PathParam("code") String code) {
+		Database conn = MyUtils.getStoredConnection(request);
+		List<Object> list = conn.findByIndex("{\"lot\": \"" + code + "\"}", Object.class, new FindByIndexOptions());
+		return Response.status(200).entity(list).build();
+	}
+	
 	
 }

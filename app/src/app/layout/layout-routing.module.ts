@@ -13,7 +13,7 @@ const routes: Routes = [
             // { path: 'rule/add', loadChildren: './rule/rule.module#RuleModule' },
 
             { path: 'lots', loadChildren: './lot/list/list-lot.module#ListLotModule' },
-            { path: 'lot/:id', loadChildren: './lot/lot.module#tLotModule' },
+            { path: 'lot/:id', loadChildren: './lot/list-document/list-document-lot.module#ListLotDocumentModule' },
             
             { path: 'companys', loadChildren: './company/list/list-company.module#ListCompanyModule' },
             { path: 'company/add', loadChildren: './company/company.module#CompanyModule' },

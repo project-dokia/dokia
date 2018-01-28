@@ -3,7 +3,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { Router } from '@angular/router';
-import { DocSend } from '../../../models/docSend';
+import { Lot } from '../../../models/lot';
 
 import { LotService } from '../../../services/lot.service';
 
@@ -19,7 +19,7 @@ import { routerTransition } from '../../../router.animations';
   animations: [routerTransition(), elementTransition()]
 })
 export class ListLotComponent implements OnInit {
-  listLot: DocSend[];
+  listLot: Lot[];
  
   
   constructor(

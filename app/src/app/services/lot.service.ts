@@ -9,6 +9,7 @@ import 'rxjs/add/operator/toPromise';
 import { environment } from '../../environments/environment';
 
 import { DocSend } from '../models/docSend';
+
 import { Lot } from '../models/lot';
 
 @Injectable()
@@ -29,7 +30,7 @@ export class LotService {
                 .catch(this.handleErrorObservable);
   }
 
-  getLotObservable(): Observable<DocSend[]> {
+  getLotObservable(): Observable<Lot[]> {
     return this.http.get(this.lotUrl)
       .map(res => res.json())
       .catch(this.handleErrorObservable);
