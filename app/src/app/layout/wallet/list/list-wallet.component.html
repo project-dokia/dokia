@@ -1,5 +1,15 @@
 <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '20px' }"></ngx-loading>
 <div>  
+
+    <section>
+        <div class="row">
+            <div class="col-12 text-right">
+                <h3>Wallet</h3>
+            </div>
+        </div> 
+    </section>
+                
+
     <section>
         <div class="row">
             <div class="col-12 text-right">
@@ -8,13 +18,22 @@
             </div>
         </div> 
     </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>ID Company</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <h5>{{idCompany}}</h5>
+        </div>
+    </section>
+    
     <section class="form-group row justify-content-between">
         <div class="col-12 table-responsive">
             <table class="table table-striped table-responsive table-bordered form-control ">
                 <thead>
                     <tr>
                         <th class="text-center">ID Wallet</th>
-                        <th class="text-center">ID Company</th>
                         <th class="text-center">Code</th>
                         <th class="text-center">Description</th>
                         <th class="text-center">Next</th>
@@ -23,7 +42,6 @@
                 <tbody>
                     <tr *ngFor="let wallet of listWallet" id="{{wallet._id}}">
                         <td class="text-right">{{wallet._id}}</td>
-                        <td class="text-right">{{wallet.idCompany}}</td>
                         <td class="text-right">{{wallet.code}}</td>
                         <td class="text-left">{{wallet.description}}</td>
                         <td class="text-center" [routerLink]="['/company/', idCompany, 'wallet', wallet._id, 'users']">NEXT</td>

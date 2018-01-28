@@ -1,6 +1,5 @@
 <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '20px' }"></ngx-loading>
 <div>  
-
     <section>
         <div class="row">
             <div class="col-12 text-right">
@@ -53,13 +52,22 @@
             <h5>{{idProcess}}</h5>
         </div>
     </section>
-    
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>ID Process</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <h5>{{idExpense}}</h5>
+        </div>
+    </section>
+
     <section class="form-group row justify-content-between">
         <div class="col-12 table-responsive">
             <table class="table table-striped table-responsive table-bordered form-control ">
                 <thead>
                     <tr>
-                        <th class="text-center">ID Expense</th>
+                        <th class="text-center">ID Document</th>
                         <th class="text-center">Type Expense</th>
                         <th class="text-center">Code Expense</th>
                         <th class="text-center">Description Expense</th>
@@ -68,13 +76,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let expense of listExpense" id="{{expense._id}}">
-                        <td class="text-right">{{expense._id}}</td>
-                        <td class="text-left"> {{expense.typeExpense}}</td>
-                        <td class="text-left"> {{expense.codeExpense}}</td>
-                        <td class="text-left"> {{expense.descriptionExpense}}</td>
-                        <td class="text-left"> {{expense.releaseDay}}</td>
-                        <td class="text-center" [routerLink]="['/company/', idCompany, 'wallet', idWallet, 'user', idUser, 'process', idProcess, 'expense', expense._id, 'document']">NEXT</td>
+                    <tr *ngFor="let document of listDocument" id="{{document._id}}">
+                        <td class="text-right">{{document._id}}</td>
+                        <td class="text-left"> {{document.type}}</td>
+                        <td class="text-left"> {{document.code}}</td>
+                        <td class="text-left"> {{document.document}}</td>
+                        <td class="text-left"> {{document.typeDocument}}</td>
+                        <td class="text-left"> {{document.infoDoc}}</td>
+                        <td class="text-center" [routerLink]="['/company/', idCompany, 'wallet', idWallet, 'user', idUser, 'process', idProcess, 'expanse', idExpanse, 'document']">NEXT</td>
                     </tr>
                 </tbody>
             </table>

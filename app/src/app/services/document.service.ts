@@ -28,8 +28,18 @@ export class DocumentService {
                 .catch(this.handleErrorObservable);
   }
 
+  getDocumentObservable(): Observable<Document[]> {
+    return this.http.get(this.documentUrl)
+      .map(res => res.json())
+      .catch(this.handleErrorObservable);
+  }
 
-  
+  getDocumentsByIDWalletObservable(idDocument:String): Observable<Document[]> {
+    return this.http.get(this.documentUrl + "/" + idDocument)
+      .map(res => res.json())
+      .catch(this.handleErrorObservable);
+  }
+
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);
     return Observable.throw(error.message || error);

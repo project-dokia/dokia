@@ -1,6 +1,7 @@
 export class Rule {
     constructor(
-        public name: string,
+        public _id: string,
+        public _rev: string,
         public type: string,
         public code: string,
         public document: string,
