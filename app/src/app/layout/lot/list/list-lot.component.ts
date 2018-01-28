@@ -10,6 +10,8 @@ import { LotService } from '../../../services/lot.service';
 import { elementTransition } from '../../../element.animations';
 import { routerTransition } from '../../../router.animations';
 
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-list-lot',
   templateUrl: './list-lot.component.html',
@@ -23,6 +25,7 @@ export class ListLotComponent implements OnInit {
  
   
   constructor(
+    private _location: Location,
     private router: Router,
     private lotService: LotService,
     private modalService: NgbModal) {}
@@ -30,6 +33,10 @@ export class ListLotComponent implements OnInit {
   ngOnInit() : void {
     this.getListLot();
     
+  }
+
+  public backLocation() {
+    this._location.back();
   }
 
   public getListLot() {

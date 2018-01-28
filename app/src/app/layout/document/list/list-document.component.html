@@ -18,7 +18,7 @@
     <section>
         <div class="row">
             <div class="col-6 text-left">
-                <label [routerLink]="['/company/', idCompany, 'wallet', idWallet, 'user', idUser, 'process', idProcess, 'expense']">
+                <label (click)="backLocation();">
                 <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i></label>
             </div>
             <div class="col-6 text-right">
@@ -73,7 +73,7 @@
                 <thead>
                     <tr>
                         <!-- <th class="text-center">ID Document</th> -->
-                        <th class="text-center">Número do process</th>
+                        <th class="text-center">Número do processo</th>
                         <!-- <th class="text-center">User CPF</th> -->
                         <!-- <th class="text-center">Company CNPJ</th> -->
                         <th class="text-center">Nome razão da empresa</th>

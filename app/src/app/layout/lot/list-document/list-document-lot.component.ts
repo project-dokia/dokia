@@ -10,6 +10,8 @@ import { DocumentService } from '../../../services/document.service';
 import { elementTransition } from '../../../element.animations';
 import { routerTransition } from '../../../router.animations';
 
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-list-document',
   templateUrl: './list-document-lot.component.html',
@@ -23,6 +25,7 @@ export class ListLotDocumentComponent implements OnInit {
   idLot:string;
   
   constructor(
+    private _location: Location,
     private router: Router,
     private documentService: DocumentService,
     private modalService: NgbModal) {}
@@ -36,6 +39,10 @@ export class ListLotDocumentComponent implements OnInit {
 
     this.getListLotDocument();
     
+  }
+
+  public backLocation() {
+    this._location.back();
   }
 
   public getListLotDocument() {

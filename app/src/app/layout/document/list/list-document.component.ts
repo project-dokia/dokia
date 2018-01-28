@@ -10,6 +10,9 @@ import { DocumentService } from '../../../services/document.service';
 import { elementTransition } from '../../../element.animations';
 import { routerTransition } from '../../../router.animations';
 
+
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-list-document',
   templateUrl: './list-document.component.html',
@@ -27,6 +30,7 @@ export class ListDocumentComponent implements OnInit {
   idExpense:string;
   
   constructor(
+    private _location: Location,
     private router: Router,
     private documentService: DocumentService,
     private modalService: NgbModal) {}
@@ -39,9 +43,12 @@ export class ListDocumentComponent implements OnInit {
     this.idUser = this.router.url.split('user/').pop().split('/process').shift();
     this.idProcess = this.router.url.split('process/').pop().split('/expense').shift();
     this.idExpense = this.router.url.split('expense/').pop().split('/document').shift();
-
-    this.getListDocument();
     
+    this.getListDocument();
+  }
+
+  public backLocation() {
+    this._location.back();
   }
 
   public getListDocument() {

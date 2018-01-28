@@ -9,11 +9,14 @@
         </div> 
     </section>
                 
-
     <section>
         <div class="row">
-            <div class="col-12 text-right">
-                <label [routerLink]="['/company/', idCompany, 'wallet','add']"><h5>ADICIONAR
+            <div class="col-6 text-left">
+                <label (click)="backLocation();">
+                <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i></label>
+            </div>
+            <div class="col-6 text-right">
+                    <label [routerLink]="['/company/', idCompany, 'wallet','add']"><h5>ADICIONAR
                 <i class="fa fa-plus-square fa-2x click gap-top5" aria-hidden="true" ></i></h5></label>
             </div>
         </div> 

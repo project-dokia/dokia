@@ -10,6 +10,8 @@ import { ProcessService } from '../../../services/process.service';
 import { elementTransition } from '../../../element.animations';
 import { routerTransition } from '../../../router.animations';
 
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-list-process',
   templateUrl: './list-process.component.html',
@@ -25,6 +27,7 @@ export class ListProcessComponent implements OnInit {
   idUser:string;
   
   constructor(
+    private _location: Location,
     private router: Router,
     private processService: ProcessService,
     private modalService: NgbModal) {}
@@ -38,6 +41,10 @@ export class ListProcessComponent implements OnInit {
     
     this.getListProcess();
     
+  }
+
+  public backLocation() {
+    this._location.back();
   }
 
   public getListProcess() {

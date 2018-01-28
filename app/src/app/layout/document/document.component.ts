@@ -91,6 +91,7 @@ export class DocumentComponent implements OnInit {
 
   public handleFileInput(files: FileList) {
     this.fileToUpload = files.item(0);
+    console.log(this.fileToUpload);
   }
 
   public uploadFileToActivity() {
@@ -120,6 +121,25 @@ export class DocumentComponent implements OnInit {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);
   }
+
+  open(content) : void{
+    this.modalService.open(content, { backdrop: 'static', size: 'lg' });
+  }
+
+  openModal(content, _id) : void{
+    // this.getLogsUser(content, _id);
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
+  }
+
 
   public getInfos() : void {
     this.processService.getProcesssByIDObservable(this.idProcess)

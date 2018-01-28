@@ -9,6 +9,8 @@ import { CompanyService } from '../../../services/company.service';
 import { elementTransition } from '../../../element.animations';
 import { routerTransition } from '../../../router.animations';
 
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-list-company',
   templateUrl: './list-company.component.html',
@@ -21,12 +23,18 @@ export class ListCompanyComponent implements OnInit {
   listCompany: Company[];
   
   constructor(
+    private _location: Location,
     private companyService: CompanyService,
     private modalService: NgbModal) {}
 
+    
   ngOnInit() : void {
     this.listCompany = new Array<Company>();
     this.getListCompany();
+  }
+
+  public backLocation() {
+    this._location.back();
   }
 
   public getListCompany() {

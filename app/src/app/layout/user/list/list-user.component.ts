@@ -10,6 +10,8 @@ import { UserService } from '../../../services/user.service';
 import { elementTransition } from '../../../element.animations';
 import { routerTransition } from '../../../router.animations';
 
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-list-user',
   templateUrl: './list-user.component.html',
@@ -24,6 +26,7 @@ export class ListUserComponent implements OnInit {
   idCompany:string;
   
   constructor(
+    private _location: Location,
     private router: Router,
     private userService: UserService,
     private modalService: NgbModal) {}
@@ -36,6 +39,10 @@ export class ListUserComponent implements OnInit {
     
     this.getListUser();
     
+  }
+
+  public backLocation() {
+    this._location.back();
   }
 
   public getListUser() {

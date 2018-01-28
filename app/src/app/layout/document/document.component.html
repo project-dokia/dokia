@@ -171,5 +171,27 @@
             <button type="button" class="btn background-button form-control" (click)="uploadFileToActivity();">UPLOAD AND SAVE</button>
         </div>
     </section> 
+
+    <section class="form-group row justify-content-between">
+        <div class="col-12 text-right">
+            <i class="fa fa-plus-square fa-2x click" aria-hidden="true" (click)="open(content)"></i>
+        </div>
+    </section>  
+
+    <ng-template #content class="modal-lg modal-large" let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">Resultado da OCR</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <section class="form-group row justify-content-between">
+                <div class="col-2 gap-top10">
+                    <h5><b>{{result}}</b></h5>
+                </div>
+            </section>
+        </div>
+    </ng-template>
        
 </div>    

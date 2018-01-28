@@ -9,6 +9,8 @@ import { WalletService } from '../../../services/wallet.service';
 import { elementTransition } from '../../../element.animations';
 import { routerTransition } from '../../../router.animations';
 
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-list-wallet',
   templateUrl: './list-wallet.component.html',
@@ -22,6 +24,7 @@ export class ListWalletComponent implements OnInit {
   idCompany: String;
 
   constructor(
+    private _location: Location,
     private router: Router,
     private walletService: WalletService,
     private modalService: NgbModal) {}
@@ -37,6 +40,10 @@ export class ListWalletComponent implements OnInit {
     if(this.idCompany != null && this.idCompany != undefined) {
       this.getListWallet();
     }
+  }
+
+  public backLocation() {
+    this._location.back();
   }
 
   public getListWallet() {

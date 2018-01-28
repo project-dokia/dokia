@@ -11,6 +11,8 @@ import { UserPipe } from './user.pipe';
 import { elementTransition } from '../../element.animations';
 import { routerTransition } from '../../router.animations';
 
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -26,6 +28,7 @@ export class UserComponent implements OnInit {
   idCompany: string;
   
   constructor(
+    private _location: Location,
     private router: Router,
     private userService: UserService,
     private modalService: NgbModal) {}
@@ -37,6 +40,10 @@ export class UserComponent implements OnInit {
     this.idCompany = this.router.url.split('company/').pop().split('/wallet').shift();
 
     this.user.idWallet = this.idWallet;
+  }
+
+  public backLocation() {
+    this._location.back();
   }
 
   public addUser() {

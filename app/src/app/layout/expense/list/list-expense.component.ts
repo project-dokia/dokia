@@ -10,6 +10,8 @@ import { ExpenseService } from '../../../services/expense.service';
 import { elementTransition } from '../../../element.animations';
 import { routerTransition } from '../../../router.animations';
 
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-list-expense',
   templateUrl: './list-expense.component.html',
@@ -26,6 +28,7 @@ export class ListExpenseComponent implements OnInit {
   idProcess:string;
   
   constructor(
+    private _location: Location,
     private router: Router,
     private expenseService: ExpenseService,
     private modalService: NgbModal) {}
@@ -40,6 +43,10 @@ export class ListExpenseComponent implements OnInit {
 
     this.getListExpense();
     
+  }
+
+  public backLocation() {
+    this._location.back();
   }
 
   public getListExpense() {
