@@ -146,8 +146,26 @@
         <label for="file">Choose File</label>
         <input type="file" id="file"  (change)="handleFileInput($event.target.files)">
     </div>
-    
 
+    <hr/>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 ">
+            <h5 class="gap-top10 "><b>Lot</b></h5>
+        </div>
+        <div class="col-4">
+            <input type="text" name="docSend.lot" id="docSend.lot" class="form-control" [(ngModel)]="docSend.lot" />
+        </div>
+        <div class="col-2 gap-top10 ">
+            <h5><b>Request Value</b></h5>
+        </div>
+        <div class="col-4">
+            <input type="text" name="docSend.requestedValue" id="docSend.requestedValue" class="form-control" [(ngModel)]="docSend.requestedValue" />
+        </div>
+    </section>  
+
+    <hr/>
+    
     <section class="form-group row justify-content-between gap-top10 gap-bottom10">
         <div class="col-4 offset-4 gap-top10 ">
             <button type="button" class="btn background-button form-control" (click)="uploadFileToActivity();">UPLOAD AND SAVE</button>

@@ -21,43 +21,37 @@
         <div class="col-2 gap-top10 ">
             <h5><b>ID Company</b></h5>
         </div>
-        <div class="col-10 gap-top10">
+        <div class="col-4 gap-top10">
             <h5>{{idCompany}}</h5>
         </div>
-    </section>
 
-    <section class="form-group row justify-content-between">
         <div class="col-2 gap-top10 ">
             <h5><b>ID Wallet</b></h5>
         </div>
-        <div class="col-10 gap-top10">
+        <div class="col-4 gap-top10">
             <h5>{{idWallet}}</h5>
         </div>
     </section>
-
     <section class="form-group row justify-content-between">
         <div class="col-2 gap-top10 ">
             <h5><b>ID User</b></h5>
         </div>
-        <div class="col-10 gap-top10">
+        <div class="col-4 gap-top10">
             <h5>{{idUser}}</h5>
         </div>
-    </section>
-
-    <section class="form-group row justify-content-between">
+        
         <div class="col-2 gap-top10 ">
             <h5><b>ID Process</b></h5>
         </div>
-        <div class="col-10 gap-top10">
+        <div class="col-4 gap-top10">
             <h5>{{idProcess}}</h5>
         </div>
     </section>
-
     <section class="form-group row justify-content-between">
         <div class="col-2 gap-top10 ">
             <h5><b>ID Expense</b></h5>
         </div>
-        <div class="col-10 gap-top10">
+        <div class="col-4 gap-top10">
             <h5>{{idExpense}}</h5>
         </div>
     </section>
@@ -68,22 +62,36 @@
                 <thead>
                     <tr>
                         <th class="text-center">ID Document</th>
+                        <th class="text-center">Number Process</th>
+                        <th class="text-center">User CPF</th>
+                        <th class="text-center">Company CNPJ</th>
+                        <th class="text-center">Company Name Reason</th>
+                        <th class="text-center">User Name</th>
+                        <th class="text-center">User ID SIR</th>
+                        <th class="text-center">Expense Code</th>
                         <th class="text-center">Type Expense</th>
-                        <th class="text-center">Code Expense</th>
                         <th class="text-center">Description Expense</th>
                         <th class="text-center">Release Day</th>
-                        <th class="text-center">NEXT</th>
+                        <th class="text-center">Wallet Description</th>
+                        <th class="text-center">Wallet Code</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let document of listDocument" id="{{document._id}}">
-                        <td class="text-right">{{document._id}}</td>
-                        <td class="text-left"> {{document.type}}</td>
-                        <td class="text-left"> {{document.code}}</td>
-                        <td class="text-left"> {{document.document}}</td>
-                        <td class="text-left"> {{document.typeDocument}}</td>
-                        <td class="text-left"> {{document.infoDoc}}</td>
-                        <td class="text-center" [routerLink]="['/company/', idCompany, 'wallet', idWallet, 'user', idUser, 'process', idProcess, 'expanse', idExpanse, 'document']">NEXT</td>
+                        
+                    <tr *ngFor="let docSend of listDocSend" id="{{docSend._id}}">
+                        <td class="text-right">{{docSend._id}}</td>
+                        <td class="text-right">{{docSend.process.numberProcess}}</td>
+                        <td class="text-right">{{docSend.user.cpf}}</td>
+                        <td class="text-right">{{docSend.company.cnpj}}</td>
+                        <td class="text-right">{{docSend.company.nameReason}}</td>
+                        <td class="text-right">{{docSend.user.name}}</td>
+                        <td class="text-right">{{docSend.user.idSIR}}</td>
+                        <td class="text-right">{{docSend.expense.codeExpense}}</td>
+                        <td class="text-right">{{docSend.expense.typeExpense}}</td>
+                        <td class="text-right">{{docSend.expense.descriptionExpense}}</td>
+                        <td class="text-right">{{docSend.expense.releaseDay}}</td>
+                        <td class="text-right">{{docSend.wallet.description}}</td>
+                        <td class="text-right">{{docSend.wallet.code}}</td>
                     </tr>
                 </tbody>
             </table>

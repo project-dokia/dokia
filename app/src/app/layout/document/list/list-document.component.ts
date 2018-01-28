@@ -3,7 +3,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { Router } from '@angular/router';
-import { Document } from '../../../models/document';
+import { DocSend } from '../../../models/docSend';
 
 import { DocumentService } from '../../../services/document.service';
 
@@ -19,7 +19,7 @@ import { routerTransition } from '../../../router.animations';
   animations: [routerTransition(), elementTransition()]
 })
 export class ListDocumentComponent implements OnInit {
-  listDocument: Document[];
+  listDocSend: DocSend[];
   idWallet: string;
   idCompany:string;
   idUser:string;
@@ -32,7 +32,7 @@ export class ListDocumentComponent implements OnInit {
     private modalService: NgbModal) {}
 
   ngOnInit() : void {
-    this.listDocument = new Array<Document>();
+    this.listDocSend = new Array<DocSend>();
     
     this.idWallet  = this.router.url.split('wallet/').pop().split('/user').shift();
     this.idCompany = this.router.url.split('company/').pop().split('/wallet').shift();
@@ -45,9 +45,9 @@ export class ListDocumentComponent implements OnInit {
   }
 
   public getListDocument() {
-    this.documentService.getDocumentsByIDWalletObservable(this.idExpense)
-    .subscribe( listDocument => {
-      this.listDocument = listDocument;
+    this.documentService.getDocumentsByIDExpenseObservable(this.idExpense)
+    .subscribe( listDocSend => {
+      this.listDocSend = listDocSend;
     },
     err => {
       console.log(err);

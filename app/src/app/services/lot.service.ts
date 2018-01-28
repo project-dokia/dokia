@@ -9,33 +9,34 @@ import 'rxjs/add/operator/toPromise';
 import { environment } from '../../environments/environment';
 
 import { DocSend } from '../models/docSend';
+import { Lot } from '../models/lot';
 
 @Injectable()
-export class DocumentService {
+export class LotService {
   
   urlBluepages = "https://faces.tap.ibm.com/api/find/?q=uid:";
 
   constructor(private http: Http) {}
   
   private headers = new Headers({ 'Content-Type': 'application/json' });
-  private documentUrl = environment.apiUrl + '/document';
+  private lotUrl = environment.apiUrl + '/lot';
 
-  addDocumentWithObservable(document:DocSend): Observable<String> {
-    const url = `${this.documentUrl}`;
+  addLotWithObservable(lot:Lot): Observable<String> {
+    const url = `${this.lotUrl}`;
     let options = new RequestOptions({ headers: this.headers });
-    return this.http.post(url, document, options)
+    return this.http.post(url, lot, options)
                 .map(res => res)
                 .catch(this.handleErrorObservable);
   }
 
-  getDocumentObservable(): Observable<Document[]> {
-    return this.http.get(this.documentUrl)
+  getLotObservable(): Observable<DocSend[]> {
+    return this.http.get(this.lotUrl)
       .map(res => res.json())
       .catch(this.handleErrorObservable);
   }
 
-  getDocumentsByIDExpenseObservable(idExpense:String): Observable<DocSend[]> {
-    return this.http.get(this.documentUrl + "/" + idExpense)
+  getLotsByIDExpenseObservable(idExpense:String): Observable<DocSend[]> {
+    return this.http.get(this.lotUrl + "/" + idExpense)
       .map(res => res.json())
       .catch(this.handleErrorObservable);
   }

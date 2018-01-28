@@ -12,5 +12,11 @@ export class DocSend {
     wallet: Wallet;
     lot: string;
     cpf: string;
+    requestedValue: string;
+    idExpense: string;
+    _id: string;
+    _rev: string;
+    approveRule: string;
+    approvePerson: string;
 }
 

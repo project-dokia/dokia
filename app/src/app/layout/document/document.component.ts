@@ -5,6 +5,7 @@ import { Document } from '../../models/document';
 import {Observable} from 'rxjs/Observable';
 import { Router } from '@angular/router';
 import { DocumentService } from '../../services/document.service';
+import { LotService } from '../../services/lot.service';
 import { ProcessService } from '../../services/process.service';
 import { ExpenseService } from '../../services/expense.service';
 import { WalletService } from '../../services/wallet.service';
@@ -23,14 +24,14 @@ import { Company } from 'app/models/company';
 import { Expense } from 'app/models/expense';
 import { Wallet } from 'app/models/wallet';
 import { DocSend } from 'app/models/docsend';
-
+import { Lot } from 'app/models/lot';
 
 @Component({
   selector: 'app-document',
   templateUrl: './document.component.html',
   styleUrls: ['./document.component.scss'],
   // declarations: [DocumentPipe],
-  providers: [DocumentService, ProcessService, ExpenseService, WalletService, UserService, CompanyService],
+  providers: [DocumentService, ProcessService, ExpenseService, WalletService, UserService, CompanyService, LotService],
   animations: [routerTransition(), elementTransition()]
 })
 
@@ -48,11 +49,14 @@ export class DocumentComponent implements OnInit {
   wallet: Wallet;
   fileToUpload: File = null;
   docSend: DocSend;
+  idDocument: String;
+  lot: Lot;
 
   constructor(
     private httpClient: HttpClient,
     private router: Router,
     private documentService: DocumentService,
+    private lotService: LotService,
     private processService: ProcessService,
     private expenseService: ExpenseService,
     private walletService: WalletService,
@@ -62,6 +66,7 @@ export class DocumentComponent implements OnInit {
 
   ngOnInit() : void {
     this.document = new Document();
+    this.docSend = new DocSend;
 
     this.idWallet  = this.router.url.split('wallet/').pop().split('/user').shift();
     this.idCompany = this.router.url.split('company/').pop().split('/wallet').shift();
@@ -75,6 +80,10 @@ export class DocumentComponent implements OnInit {
     this.expense = new Expense;
     this.wallet = new Wallet;
 
+    this.docSend.cpf = "45084552802";
+    this.docSend.lot = "123";
+    this.docSend.requestedValue = "R$10,50";
+
     this.getInfos();
   }
 
@@ -83,23 +92,16 @@ export class DocumentComponent implements OnInit {
   }
 
   public uploadFileToActivity() {
-    this.postFile(this.fileToUpload).subscribe(data => {
-      // do something, if upload success
-      }, error => {
-        console.log(error);
-      });
+    this.addDocument();  
   }
 
   public postFile(fileToUpload: File): Observable<Object> {
-    this.docSend = new DocSend;
-
     this.docSend.process = this.process;
     this.docSend.company = this.company;
     this.docSend.user = this.user;
     this.docSend.expense = this.expense;
     this.docSend.wallet = this.wallet;
-    this.docSend.cpf = "45084552802";
-    this.docSend.lot = "123";
+    this.docSend.idExpense = this.idExpense;
 
     const endpoint = 'https://dokia-ocr.herokuapp.com/upload_doc';
     const formData: FormData = new FormData();
@@ -160,15 +162,27 @@ export class DocumentComponent implements OnInit {
   }  
 
   public addDocument() {
-    this.documentService.addDocumentWithObservable(this.document)
+    this.documentService.addDocumentWithObservable(this.docSend)
     .subscribe( res => {
-
-      alert("Adicionado!");
-      this.document = new Document();    
+      this.postFile(this.fileToUpload).subscribe(data => {
+        this.docSend._id = data.toString();
+        alert("Adicionado!");
+        this.process = new Process();   
+      }, error => {
+        console.log(error);
+      });
     },
     err => {
       console.log(err);
     });
-
-  }
+  
+    this.lot = new Lot;
+    this.lot.code = this.docSend.lot;
+    
+    this.lotService.addLotWithObservable(this.lot)
+      .subscribe( res => {
+        }, error => {
+          console.log(error);
+        });
+    }
 }
