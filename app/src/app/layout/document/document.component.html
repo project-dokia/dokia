@@ -1,25 +1,26 @@
 <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '20px' }"></ngx-loading>
 <div>    
-
-    <div class="form-group">
-        <label for="file">Choose File</label>
-        <input type="file" id="file" (change)="handleFileInput($event.target.files)">
-    </div>
+    <section>
+        <div class="row">
+            <div class="col-12 text-left">
+                <h3>Document</h3>
+            </div>
+        </div> 
+    </section>
+                    
+    <hr/>
 
     <section class="form-group row justify-content-between">
         <div class="col-2 gap-top10 ">
             <h5><b>ID Company</b></h5>
         </div>
-        <div class="col-10 gap-top10">
+        <div class="col-4 gap-top10">
             <h5>{{idCompany}}</h5>
         </div>
-    </section>
-
-    <section class="form-group row justify-content-between">
         <div class="col-2 gap-top10 ">
             <h5><b>ID Wallet</b></h5>
         </div>
-        <div class="col-10 gap-top10">
+        <div class="col-4 gap-top10">
             <h5>{{idWallet}}</h5>
         </div>
     </section>
@@ -28,166 +29,129 @@
         <div class="col-2 gap-top10 ">
             <h5><b>ID User</b></h5>
         </div>
-        <div class="col-10 gap-top10">
+        <div class="col-4 gap-top10">
             <h5>{{idUser}}</h5>
         </div>
-    </section>
-
-    <section class="form-group row justify-content-between">
         <div class="col-2 gap-top10 ">
             <h5><b>ID Process</b></h5>
         </div>
-        <div class="col-10 gap-top10">
+        <div class="col-4 gap-top10">
             <h5>{{idProcess}}</h5>
         </div>
     </section>
 
-    <div class="card gap-top10">
-        <div class="card-header">
-            Process
+    <section class="form-group row justify-content-start">
+        <div class="col-2 gap-top10">
+            <h5><b>Process Number</b></h5>
         </div>
-        <div class="card-block">
-            <section class="form-group row justify-content-start">
-                <div class="col-2 gap-top10 text-right">
-                    <h5><b>Process Number</b></h5>
-                </div>
-                <div class="col-10">
-                   <h5>{{process.numberProcess}}</h5>
-                </div>
-            </section>
+        <div class="col-4">
+            <h5>{{process.numberProcess}}</h5>
         </div>
-    </div>
 
-    <div class="card gap-top10">
-        <div class="card-header">
-            Company
+        <div class="col-2 gap-top10">
+            <h5><b>User CPF</b></h5>
         </div>
-        <div class="card-block">
-            <section class="form-group row justify-content-start">
-                <div class="col-2 gap-top10 text-right">
-                    <h5><b>Company CNPJ</b></h5>
-                </div>
-                <div class="col-4">
-                    <h5>{{company.cnpj}}</h5>
-                </div>
-                <div class="col-2 gap-top10 text-right">
-                    <h5><b>Company Name Reason</b></h5>
-                </div>
-                <div class="col-4">
-                    <h5>{{company.nameReason}}</h5>
-                </div>
-            </section>
+        <div class="col-4">
+            <h5>{{user.cpf}}</h5>
         </div>
-    </div>
+    </section>
 
+    <section class="form-group row justify-content-start">
+        <div class="col-2 gap-top10">
+            <h5><b>Company CNPJ</b></h5>
+        </div>
+        <div class="col-4">
+            <h5>{{company.cnpj}}</h5>
+        </div>
+        <div class="col-2 gap-top10">
+            <h5><b>Company Name Reason</b></h5>
+        </div>
+        <div class="col-4">
+            <h5>{{company.nameReason}}</h5>
+        </div>
+    </section>
 
-    <div class="card gap-top10">
-        <div class="card-header">
-            User
+    <section class="form-group row justify-content-start">
+        <div class="col-2 gap-top10">
+            <h5><b>User name</b></h5>
         </div>
-        <div class="card-block">
-            <section class="form-group row justify-content-start">
-                <div class="col-2 gap-top10 text-right">
-                    <h5><b>User name</b></h5>
-                </div>
-                <div class="col-10">
-                    <h5>{{user.name}}</h5>
-                </div>
-                <div class="col-2 gap-top10 text-right">
-                    <h5><b>User ID SIR</b></h5>
-                </div>
-                <div class="col-10">
-                    <h5>{{user.idSIR}}</h5>
-                </div>
-            </section>
-            <section class="form-group row justify-content-start">
-                <div class="col-2 gap-top10 text-right">
-                    <h5><b>User CPF</b></h5>
-                </div>
-                <div class="col-10">
-                    <h5>{{user.cpf}}</h5>
-                </div>
-            </section>
+        <div class="col-4">
+            <h5>{{user.name}}</h5>
         </div>
-    </div>
+        <div class="col-2 gap-top10">
+            <h5><b>User ID SIR</b></h5>
+        </div>
+        <div class="col-4">
+            <h5>{{user.idSIR}}</h5>
+        </div>
+    </section>
 
-    <div class="card gap-top10">
-        <div class="card-header">
-            Process
+    <section class="form-group row justify-content-start">
+        <div class="col-2 gap-top10">
+            <h5><b>Code expense</b></h5>
         </div>
-        <div class="card-block">
-            <section class="form-group row justify-content-start">
-                <div class="col-2 gap-top10 text-right">
-                    <h5><b>Process Number</b></h5>
-                </div>
-                <div class="col-10">
-                    <h5>{{process.numberProcess}}</h5>
-                </div>
-            </section>
+        <div class="col-4">
+            <h5>{{expense.codeExpense}}</h5>
         </div>
-    </div>
+        <div class="col-2 gap-top10">
+            <h5><b>Type Expense</b></h5>
+        </div>
+        <div class="col-4">
+            <h5>{{expense.typeExpense}}</h5>
+        </div>
+    </section>
 
-    <div class="card gap-top10">
-        <div class="card-header">
-            Expense
+    <section class="form-group row justify-content-start">
+        <div class="col-2 gap-top10">
+            <h5><b>Description Expense</b></h5>
         </div>
-        <div class="card-block">
-            <section class="form-group row justify-content-start">
-                <div class="col-2 gap-top10 text-right">
-                    <h5><b>Code expense</b></h5>
-                </div>
-                <div class="col-10">
-                    <h5>{{expense.codeExpense}}</h5>
-                </div>
-                <div class="col-2 gap-top10 text-right">
-                    <h5><b>Type Expense</b></h5>
-                </div>
-                <div class="col-10">
-                    <h5>{{expense.typeExpense}}</h5>
-                </div>
-            </section>
-            <section class="form-group row justify-content-start">
-                <div class="col-2 gap-top10 text-right">
-                    <h5><b>Description Expense</b></h5>
-                </div>
-                <div class="col-10">
-                    <h5>{{expense.descriptionExpense}}</h5>
-                </div>
-                <div class="col-2 gap-top10 text-right">
-                    <h5><b>Release Day</b></h5>
-                </div>
-                <div class="col-10">
-                    <h5>{{expense.realeaseDay}}</h5>
-                </div>
-            </section>
+        <div class="col-4">
+            <h5>{{expense.descriptionExpense}}</h5>
         </div>
-    </div>
+        <div class="col-2 gap-top10">
+            <h5><b>Release Day</b></h5>
+        </div>
+        <div class="col-4">
+            <h5>{{expense.releaseDay}}</h5>
+        </div>
+    </section>
 
-    <div class="card gap-top10">
-        <div class="card-header">
-            Wallet
+    <section class="form-group row justify-content-start">
+        <div class="col-2 gap-top10">
+            <h5><b>Description</b></h5>
         </div>
-        <div class="card-block">
-            <section class="form-group row justify-content-start">
-                <div class="col-2 gap-top10 text-right">
-                    <h5><b>Description</b></h5>
-                </div>
-                <div class="col-10">
-                    <h5>{{wallet.description}}</h5>
-                </div>
-                <div class="col-2 gap-top10 text-right">
-                    <h5><b>Code</b></h5>
-                </div>
-                <div class="col-10">
-                    <h5>{{wallet.code}}</h5>
-                </div>
-            </section>
+        <div class="col-4">
+            <h5>{{wallet.description}}</h5>
         </div>
+        <div class="col-2 gap-top10">
+            <h5><b>Code</b></h5>
+        </div>
+        <div class="col-4">
+            <h5>{{wallet.code}}</h5>
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-start">
+        <div class="col-2 gap-top10">
+            <h5><b>Process Number</b></h5>
+        </div>
+        <div class="col-4">
+            <h5>{{process.numberProcess}}</h5>
+        </div>
+    </section>
+    
+    <hr/>
+
+    <div class="form-group">
+        <label for="file">Choose File</label>
+        <input type="file" id="file"  (change)="handleFileInput($event.target.files)">
     </div>
     
-    <section class="form-group row justify-content-between">
+
+    <section class="form-group row justify-content-between gap-top10 gap-bottom10">
         <div class="col-4 offset-4 gap-top10 ">
             <button type="button" class="btn background-button form-control" (click)="uploadFileToActivity();">UPLOAD AND SAVE</button>
         </div>
-    </section>         
+    </section> 
+       
 </div>    

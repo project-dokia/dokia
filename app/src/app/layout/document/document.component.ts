@@ -104,8 +104,8 @@ export class DocumentComponent implements OnInit {
     const endpoint = 'https://dokia-ocr.herokuapp.com/upload_doc';
     const formData: FormData = new FormData();
     formData.append('fileKey', fileToUpload, fileToUpload.name);
-    formData.append('docSend', JSON.stringify(this.docSend), "DocSend");
-    
+    formData.set("docSend",  JSON.stringify(this.docSend));
+
     return this.httpClient
       .post(endpoint, formData)
       .map(() => { return true; })
