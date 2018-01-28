@@ -15,7 +15,6 @@ public class ApplicationApis extends Application {
         classes.add(UserWS.class);
         classes.add(RuleWS.class);
         classes.add(CompanyWS.class);
-        classes.add(CostWS.class);
         classes.add(DocumentWS.class);
         classes.add(WalletWS.class);
         classes.add(ProcessWS.class);

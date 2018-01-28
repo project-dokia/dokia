@@ -3,7 +3,7 @@
     <section>
         <div class="row">
             <div class="col-12 text-right">
-                <h3>Expense</h3>
+                <h3>Document</h3>
             </div>
         </div> 
     </section>
@@ -11,7 +11,7 @@
     <section>
         <div class="row">
             <div class="col-12 text-left">
-                <label [routerLink]="['/company/', idCompany, 'wallet', idWallet, 'user', idUser, 'process', idProcess, 'expense', 'add']"><h5>ADICIONAR
+                <label [routerLink]="['/company/', idCompany, 'wallet', idWallet, 'user', idUser, 'process', idProcess, 'expense', idExpense, 'document', 'add']"><h5>ADICIONAR
                 <i class="fa fa-plus-square fa-2x click gap-top5" aria-hidden="true" ></i></h5></label>
             </div>
         </div> 
@@ -55,7 +55,7 @@
 
     <section class="form-group row justify-content-between">
         <div class="col-2 gap-top10 ">
-            <h5><b>ID Process</b></h5>
+            <h5><b>ID Expense</b></h5>
         </div>
         <div class="col-10 gap-top10">
             <h5>{{idExpense}}</h5>

@@ -58,6 +58,15 @@ public class ExpenseWS {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/id/{_id}")
+	public Response getExpenseById(@PathParam("_id") String _id) {
+		Database conn = MyUtils.getStoredConnection(request);
+		List<Object> list = conn.findByIndex("{\"_id\": \"" + _id + "\"}", Object.class, new FindByIndexOptions());
+		return Response.status(200).entity(list.get(0)).build();
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response getExpense() {	
 		
 		Database conn = MyUtils.getStoredConnection(request);

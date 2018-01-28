@@ -40,6 +40,11 @@ export class UserService {
       .catch(this.handleErrorObservable);
   }
 
+  getUserByIDObservable(_id:String): Observable<User> {
+    return this.http.get(this.userUrl + "/id/" + _id)
+      .map(res => res.json())
+      .catch(this.handleErrorObservable);
+  }
 
   // updateUserWithObservable(user:User): Observable<String> {
   //   const url = `${this.userUrl}` + "/update";

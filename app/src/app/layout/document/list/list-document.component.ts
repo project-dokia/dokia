@@ -24,6 +24,7 @@ export class ListDocumentComponent implements OnInit {
   idCompany:string;
   idUser:string;
   idProcess:string;
+  idExpense:string;
   
   constructor(
     private router: Router,
@@ -36,14 +37,15 @@ export class ListDocumentComponent implements OnInit {
     this.idWallet  = this.router.url.split('wallet/').pop().split('/user').shift();
     this.idCompany = this.router.url.split('company/').pop().split('/wallet').shift();
     this.idUser = this.router.url.split('user/').pop().split('/process').shift();
-    this.idProcess = this.router.url.split('process/').pop().split('/document').shift();
+    this.idProcess = this.router.url.split('process/').pop().split('/expense').shift();
+    this.idExpense = this.router.url.split('expense/').pop().split('/document').shift();
 
     this.getListDocument();
     
   }
 
   public getListDocument() {
-    this.documentService.getDocumentsByIDWalletObservable(this.idProcess)
+    this.documentService.getDocumentsByIDWalletObservable(this.idExpense)
     .subscribe( listDocument => {
       this.listDocument = listDocument;
     },

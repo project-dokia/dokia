@@ -40,6 +40,12 @@ export class WalletService {
       .catch(this.handleErrorObservable);
   }
 
+  getWalletByIDObservable(_id:String): Observable<Wallet> {
+    return this.http.get(this.walletUrl + "/id/" + _id)
+      .map(res => res.json())
+      .catch(this.handleErrorObservable);
+  }
+  
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);
     return Observable.throw(error.message || error);

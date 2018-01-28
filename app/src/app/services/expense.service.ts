@@ -40,6 +40,12 @@ export class ExpenseService {
       .catch(this.handleErrorObservable);
   }
 
+  getExpensesByIDObservable(_id:String): Observable<Expense> {
+    return this.http.get(this.expenseUrl + "/id/" + _id)
+      .map(res => res.json())
+      .catch(this.handleErrorObservable);
+  }
+  
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);
     return Observable.throw(error.message || error);

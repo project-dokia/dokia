@@ -46,6 +46,7 @@ export class ListExpenseComponent implements OnInit {
     this.expenseService.getExpensesByIDWalletObservable(this.idProcess)
     .subscribe( listExpense => {
       this.listExpense = listExpense;
+      
     },
     err => {
       console.log(err);

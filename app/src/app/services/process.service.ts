@@ -40,6 +40,12 @@ export class ProcessService {
       .catch(this.handleErrorObservable);
   }
 
+  getProcesssByIDObservable(_id:String): Observable<Process> {
+    return this.http.get(this.processUrl + "/id/" + _id)
+      .map(res => res.json())
+      .catch(this.handleErrorObservable);
+  }
+
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);
     return Observable.throw(error.message || error);

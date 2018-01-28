@@ -8,17 +8,9 @@ const routes: Routes = [
         children: [
             { path: 'document', loadChildren: './document/document.module#DocumentModule' },
             
-            // // { path: 'user/list', loadChildren: './user/list/list-user.module#ListUserModule' },
-            // { path: 'user/add', loadChildren: './user/user.module#UserModule' },
 
             // { path: 'rule/list', loadChildren: './rule/list/list-rule.module#ListRuleModule' },
             // { path: 'rule/add', loadChildren: './rule/rule.module#RuleModule' },
-
-            // { path: 'wallet/list', loadChildren: './wallet/list/list-wallet.module#ListWalletModule' },
-            // { path: 'wallet/add', loadChildren: './wallet/wallet.module#WalletModule' },
-
-            // { path: 'cost/list', loadChildren: './cost/list/list-cost.module#ListCostModule' },
-            // { path: 'cost/add', loadChildren: './cost/cost.module#CostModule' },
 
             { path: 'companys', loadChildren: './company/list/list-company.module#ListCompanyModule' },
             { path: 'company/add', loadChildren: './company/company.module#CompanyModule' },
@@ -34,6 +26,9 @@ const routes: Routes = [
             
             { path: 'company/:id/wallet/:id/user/:id/process/:id/expense/add', loadChildren: './expense/expense.module#ExpenseModule' },
             { path: 'company/:id/wallet/:id/user/:id/process/:id/expense', loadChildren: './expense/list/list-expense.module#ListExpenseModule' },  
+
+            { path: 'company/:id/wallet/:id/user/:id/process/:id/expense/:id/document/add', loadChildren: './document/document.module#DocumentModule' },
+            { path: 'company/:id/wallet/:id/user/:id/process/:id/expense/:id/document', loadChildren: './document/list/list-document.module#ListDocumentModule' },  
         ]
     }
 ];

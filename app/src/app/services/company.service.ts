@@ -34,6 +34,12 @@ export class CompanyService {
       .catch(this.handleErrorObservable);
   }
 
+  getCompanyByIDObservable(_id:String): Observable<Company> {
+    return this.http.get(this.companyUrl + "/id/" + _id)
+      .map(res => res.json())
+      .catch(this.handleErrorObservable);
+  }
+  
 
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);
