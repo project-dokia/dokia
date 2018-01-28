@@ -1,0 +1,45 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '20px' }"></ngx-loading>
+<div>  
+    <section>
+        <div class="row">
+            <div class="col-12 text-right">
+                <label [routerLink]="['/company/', idCompany, 'wallet', idWallet, 'user', idUser, 'process', idProcess, 'expense', 'add']"><h5>ADICIONAR
+                <i class="fa fa-plus-square fa-2x click gap-top5" aria-hidden="true" ></i></h5></label>
+            </div>
+        </div> 
+    </section>
+    <section class="form-group row justify-content-between">
+        <div class="col-12 table-responsive">
+            <table class="table table-striped table-responsive table-bordered form-control ">
+                <thead>
+                    <tr>
+                        <th class="text-center">ID Expense</th>
+                        <th class="text-center">ID Process</th>
+                        <th class="text-center">ID User</th>
+                        <th class="text-center">ID Wallet</th>
+                        <th class="text-center">ID Company</th>
+                        <th class="text-center">Type Expense</th>
+                        <th class="text-center">Code Expense</th>
+                        <th class="text-center">Description Expense</th>
+                        <th class="text-center">Release Day</th>
+                        <th class="text-center">NEXT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let expense of listExpense" id="{{expense._id}}">
+                        <td class="text-right">{{expense._id}}</td>
+                        <td class="text-right">{{expense.idProcess}}</td>
+                        <td class="text-right">{{idUser}}</td>
+                        <td class="text-right">{{idWallet}}</td>
+                        <td class="text-right">{{idCompany}}</td>
+                        <td class="text-left"> {{expense.typeExpense}}</td>
+                        <td class="text-left"> {{expense.codeExpense}}</td>
+                        <td class="text-left"> {{expense.DescriptionExpense}}</td>
+                        <td class="text-left"> {{expense.releaseDay}}</td>
+                        <td class="text-center" [routerLink]="['/company/', idCompany, 'wallet', idWallet, 'user', idUser, 'process', idProcess, 'expense', expense._id, 'document']">NEXT</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>  
+</div>

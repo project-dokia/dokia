@@ -3,47 +3,49 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { Router } from '@angular/router';
-import { Process } from '../../../models/process';
+import { Expense } from '../../../models/expense';
 
-import { ProcessService } from '../../../services/process.service';
+import { ExpenseService } from '../../../services/expense.service';
 
 import { elementTransition } from '../../../element.animations';
 import { routerTransition } from '../../../router.animations';
 
 @Component({
-  selector: 'app-list-process',
-  templateUrl: './list-process.component.html',
-  styleUrls: ['./list-process.component.scss'],
-  // declarations: [ListProcessPipe],
-  providers: [ProcessService],
+  selector: 'app-list-expense',
+  templateUrl: './list-expense.component.html',
+  styleUrls: ['./list-expense.component.scss'],
+  // declarations: [ListExpensePipe],
+  providers: [ExpenseService],
   animations: [routerTransition(), elementTransition()]
 })
-export class ListProcessComponent implements OnInit {
-  listProcess: Process[];
+export class ListExpenseComponent implements OnInit {
+  listExpense: Expense[];
   idWallet: string;
   idCompany:string;
   idUser:string;
+  idProcess:string;
   
   constructor(
     private router: Router,
-    private processService: ProcessService,
+    private expenseService: ExpenseService,
     private modalService: NgbModal) {}
 
   ngOnInit() : void {
-    this.listProcess = new Array<Process>();
+    this.listExpense = new Array<Expense>();
     
     this.idWallet  = this.router.url.split('wallet/').pop().split('/user').shift();
     this.idCompany = this.router.url.split('company/').pop().split('/wallet').shift();
     this.idUser = this.router.url.split('user/').pop().split('/process').shift();
-    
-    this.getListProcess();
+    this.idProcess = this.router.url.split('process/').pop().split('/expense').shift();
+
+    this.getListExpense();
     
   }
 
-  public getListProcess() {
-    this.processService.getProcesssByIDWalletObservable(this.idUser)
-    .subscribe( listProcess => {
-      this.listProcess = listProcess;
+  public getListExpense() {
+    this.expenseService.getExpensesByIDWalletObservable(this.idProcess)
+    .subscribe( listExpense => {
+      this.listExpense = listExpense;
     },
     err => {
       console.log(err);

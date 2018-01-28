@@ -1,0 +1,80 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '20px' }"></ngx-loading>
+<div>    
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>ID Company</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <h5>{{idCompany}}</h5>
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>ID Wallet</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <h5>{{idWallet}}</h5>
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>ID User</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <h5>{{idUser}}</h5>
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>ID Process</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <h5>{{expense.idProcess}}</h5>
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>Type Expense</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <input type="text" name="expense.typeExpense" id="expense.typeExpense" class="form-control" [(ngModel)]="expense.typeExpense" />
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>Code Expense</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <input type="text" name="expense.codeExpense" id="expense.codeExpense" class="form-control" [(ngModel)]="expense.codeExpense" />
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>Description Expense</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <input type="text" name="expense.descriptionExpense" id="expense.descriptionExpense" class="form-control" [(ngModel)]="expense.descriptionExpense" />
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-2 gap-top10 ">
+            <h5><b>Release Day</b></h5>
+        </div>
+        <div class="col-10 gap-top10">
+            <input type="text" name="expense.releaseDay" id="expense.releaseDay" class="form-control" [(ngModel)]="expense.releaseDay" />
+        </div>
+    </section>
+
+    <section class="form-group row justify-content-between">
+        <div class="col-4 offset-4 gap-top10 ">
+            <button type="button" class="btn background-button form-control" (click)="addExpense();">Save</button>
+        </div>
+    </section>        
+</div>    

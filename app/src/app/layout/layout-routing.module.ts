@@ -30,7 +30,10 @@ const routes: Routes = [
             { path: 'company/:id/wallet/:id/users', loadChildren: './user/list/list-user.module#ListUserModule' },
             
             { path: 'company/:id/wallet/:id/user/:id/process/add', loadChildren: './process/process.module#ProcessModule' },
-            { path: 'company/:id/wallet/:id/user/:id/process', loadChildren: './process/list/list-process.module#ListProcessModule' },        
+            { path: 'company/:id/wallet/:id/user/:id/process', loadChildren: './process/list/list-process.module#ListProcessModule' },  
+            
+            { path: 'company/:id/wallet/:id/user/:id/process/:id/expense/add', loadChildren: './expense/expense.module#ExpenseModule' },
+            { path: 'company/:id/wallet/:id/user/:id/process/:id/expense', loadChildren: './expense/list/list-expense.module#ListExpenseModule' },  
         ]
     }
 ];
