@@ -42,6 +42,7 @@ export class UserComponent implements OnInit {
     this.user.idWallet = this.idWallet;
   }
 
+
   public backLocation() {
     this._location.back();
   }
@@ -52,6 +53,8 @@ export class UserComponent implements OnInit {
 
       alert("Adicionado!");
       this.user = new User();    
+
+      this.backLocation(); 
     },
     err => {
       console.log(err);

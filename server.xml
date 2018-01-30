@@ -34,23 +34,6 @@
 	<httpEndpoint host="*" httpPort="9080" httpsPort="9443"
 		id="defaultHttpEndpoint" />
 
-	<!-- import the IdP certificate into the keystore at <liberty_root>/usr/servers/<server_name>/resources/security/key.jks -->
-	<keyStore id="defaultKeyStore" password="{xor}KD4sPjsyNjE=" />
-	<keyStore id="trustStore" password="{xor}KD4sPjsyNjE=" />
-
-	<openidConnectClient id="dokiaroom" clientId="MDY3MGVlZDUtZDViOS00"
-		clientSecret="Mjg2OTY2NWItZTdjMS00"
-		authorizationEndpointUrl="https://w3id-test.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/authorize"
-		tokenEndpointUrl="https://w3id-test.sso.ibm.com/isam/oidc/endpoint/amapp-runtime-oidcidp/token"
-		issuerIdentifier="https://w3id-test.sso.ibm.com/isam"
-		userIdentityToCreateSubject="sub" signatureAlgorithm="RS256"
-		trustStoreRef="trustStore" trustAliasName="w3idp" sslRef="sslidp"
-		authFilterRef="myAuthFilter">
-	</openidConnectClient>
-
-	<authFilter id="myAuthFilter">
-		<requestUrl id="myRequestUrl" urlPattern="/api/login" matchType="contains" />
-	</authFilter>
 
 	<!-- redirects to https://libertystarterclaude.mybluemix.net/oidcclient/redirect/bluemixoidc1 -->
 	<!-- define ssl connection to w3 IdP -->

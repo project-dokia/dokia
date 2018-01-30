@@ -26,6 +26,7 @@ import { Wallet } from 'app/models/wallet';
 import { DocSend } from 'app/models/docSend';
 import { Lot } from 'app/models/lot';
 
+import {Location} from '@angular/common';
 @Component({
   selector: 'app-document',
   templateUrl: './document.component.html',
@@ -53,6 +54,7 @@ export class DocumentComponent implements OnInit {
   lot: Lot;
 
   constructor(
+    private _location: Location,
     private httpClient: HttpClient,
     private router: Router,
     private documentService: DocumentService,
@@ -115,6 +117,10 @@ export class DocumentComponent implements OnInit {
       .post(endpoint, formData)
       .map(() => { return true; })
       .catch((e) => this.handleError(e));
+  }
+
+  public backLocation() {
+    this._location.back();
   }
 
   public handleError(error: any): Promise<any> {
@@ -190,6 +196,8 @@ export class DocumentComponent implements OnInit {
         this.docSend._id = data.toString();
         alert("Adicionado!");
         this.process = new Process();   
+
+      this.backLocation(); 
       }, error => {
         console.log(error);
       });

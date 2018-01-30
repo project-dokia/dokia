@@ -9,6 +9,7 @@ import { ProcessService } from '../../services/process.service';
 import { elementTransition } from '../../element.animations';
 import { routerTransition } from '../../router.animations';
 
+import {Location} from '@angular/common';
 @Component({
   selector: 'app-process',
   templateUrl: './process.component.html',
@@ -25,6 +26,7 @@ export class ProcessComponent implements OnInit {
   idUser:string;
   
   constructor(
+    private _location: Location,
     private router: Router,
     private processService: ProcessService,
     private modalService: NgbModal) {}
@@ -38,12 +40,18 @@ export class ProcessComponent implements OnInit {
     this.process.idUser = this.idUser;
   }
 
+  public backLocation() {
+    this._location.back();
+  }
+
   public addProcess() {
     this.processService.addProcessWithObservable(this.process)
     .subscribe( res => {
 
       alert("Adicionado!");
       this.process = new Process();    
+
+      this.backLocation(); 
     },
     err => {
       console.log(err);

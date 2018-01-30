@@ -8,6 +8,8 @@ import { CompanyService } from '../../services/company.service';
 import { elementTransition } from '../../element.animations';
 import { routerTransition } from '../../router.animations';
 
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-company',
   templateUrl: './company.component.html',
@@ -21,6 +23,7 @@ export class CompanyComponent implements OnInit {
   company: Company;
   
   constructor(
+    private _location: Location,
     private companyService: CompanyService,
     private modalService: NgbModal) {}
 
@@ -28,12 +31,17 @@ export class CompanyComponent implements OnInit {
     this.company = new Company();
   }
 
+  public backLocation() {
+    this._location.back();
+  }
+
   public addCompany() {
     this.companyService.addCompanyWithObservable(this.company)
     .subscribe( res => {
 
       alert("Adicionado!");
-      this.company = new Company();    
+      this.company = new Company();   
+      this.backLocation(); 
     },
     err => {
       console.log(err);

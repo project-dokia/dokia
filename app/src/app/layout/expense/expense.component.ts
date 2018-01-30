@@ -9,6 +9,7 @@ import { ExpenseService } from '../../services/expense.service';
 import { elementTransition } from '../../element.animations';
 import { routerTransition } from '../../router.animations';
 
+import {Location} from '@angular/common';
 @Component({
   selector: 'app-expense',
   templateUrl: './expense.component.html',
@@ -26,6 +27,7 @@ export class ExpenseComponent implements OnInit {
   idProcess:string;
   
   constructor(
+    private _location: Location,
     private router: Router,
     private expenseService: ExpenseService,
     private modalService: NgbModal) {}
@@ -40,12 +42,18 @@ export class ExpenseComponent implements OnInit {
     this.expense.idProcess = this.idProcess;
   }
 
+  public backLocation() {
+    this._location.back();
+  }
+
   public addExpense() {
     this.expenseService.addExpenseWithObservable(this.expense)
     .subscribe( res => {
 
       alert("Adicionado!");
       this.expense = new Expense();    
+
+      this.backLocation(); 
     },
     err => {
       console.log(err);
