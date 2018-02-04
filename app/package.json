@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --ssl 1 --ssl-key key.pem --ssl-cert cert.pem --proxy-config proxy.config.json --open ",
+    "start": "ng serve",
     "build": "ng build --prod",
     "gitbuild": "ng build --prod --base /start-angular/SB-Admin-BS4-Angular-4/master/dist/",
     "test": "ng test",
@@ -29,9 +29,10 @@
     "@ngx-translate/http-loader": "^2.0.0",
     "core-js": "^2.5.1",
     "font-awesome": "^4.7.0",
+    "ng-socket-io": "^0.2.4",
     "ng2-charts": "^1.6.0",
-    "rxjs": "5.5.2",
     "ngx-loading": "^1.0.9",
+    "rxjs": "5.5.2",
     "zone.js": "^0.8.17"
   },
   "devDependencies": {

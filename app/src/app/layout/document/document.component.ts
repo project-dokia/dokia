@@ -23,7 +23,7 @@ import { User } from 'app/models/user';
 import { Company } from 'app/models/company';
 import { Expense } from 'app/models/expense';
 import { Wallet } from 'app/models/wallet';
-import { DocSend } from 'app/models/docSend';
+import { DocSend } from 'app/models/docsend';
 import { Lot } from 'app/models/lot';
 
 import {Location} from '@angular/common';

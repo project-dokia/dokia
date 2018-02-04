@@ -8,7 +8,7 @@ import 'rxjs/add/operator/toPromise';
 
 import { environment } from '../../environments/environment';
 
-import { DocSend } from '../models/docSend';
+import { DocSend } from '../models/docsend';
 
 @Injectable()
 export class DocumentService {

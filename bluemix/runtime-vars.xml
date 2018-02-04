@@ -10,9 +10,9 @@
   <variable name='port' value='8080'/>
   <variable name='home' value='/home/vcap/app'/>
   <variable name='vcap_app_port' value='8080'/>
-  <variable name='application_name' value='dokiaroom'/>
-  <variable name='application_version' value='2985e98b-1638-4160-af82-a6dbcf85bcb1'/>
+  <variable name='application_name' value='dokiaproject'/>
+  <variable name='application_version' value='e1dd3dc0-f957-4d64-9b5f-e1682a677a08'/>
   <variable name='host' value='0.0.0.0'/>
-  <variable name='application_uris' value='dokiaroom.mybluemix.net'/>
+  <variable name='application_uris' value='dokiaproject.mybluemix.net'/>
   <variable name='application.log.dir' value='../../../../../logs'/>
 </server>

@@ -1,9 +1,9 @@
 ---
 applications:
-- name: dokiaroom
+- name: dokiaproject
   memory: 512M
-  host: dokiaroom
+  host: dokiaproject
   domain: mybluemix.net
   path: defaultServer
   services:
-  - onduty-cloudantNoSQLDB
+  - CloudantResolv

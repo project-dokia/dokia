@@ -3,7 +3,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { Router } from '@angular/router';
-import { DocSend } from '../../../models/docSend';
+import { DocSend } from '../../../models/docsend';
 
 import { DocumentService } from '../../../services/document.service';
 
