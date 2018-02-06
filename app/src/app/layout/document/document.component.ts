@@ -190,6 +190,7 @@ export class DocumentComponent implements OnInit {
   }  
 
   public addDocument() {
+    this.docSend.status = "WAIT";
     this.documentService.addDocumentWithObservable(this.docSend)
     .subscribe( res => {
       this.postFile(this.fileToUpload).subscribe(data => {

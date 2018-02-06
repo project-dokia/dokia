@@ -18,7 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoadingModule,
     MatCardModule,
     MatSelectModule,
-    NgbModule
+    NgbModule,
   ],
   declarations: [CompanyComponent]
 })

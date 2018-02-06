@@ -6,6 +6,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: '/api',
+  apiUrl: 'https://dokiaproject.mybluemix.net/api',
   apiUrlLogin: 'https://localhost:9443/dokia/'
 };

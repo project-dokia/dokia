@@ -7,5 +7,6 @@ export class Rule {
         public document: string,
         public typeDocument: string,
         public infoDoc: Array<String>,
+        public status: string,
     ){ }
 }

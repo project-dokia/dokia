@@ -12,9 +12,6 @@ import { Company } from '../models/company';
 
 @Injectable()
 export class CompanyService {
-  
-  urlBluepages = "https://faces.tap.ibm.com/api/find/?q=uid:";
-
   constructor(private http: Http) {}
   
   private headers = new Headers({ 'Content-Type': 'application/json' });

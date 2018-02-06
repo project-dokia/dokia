@@ -9,7 +9,6 @@ import { elementTransition } from '../../element.animations';
 import { routerTransition } from '../../router.animations';
 
 import {Location} from '@angular/common';
-import { Socket } from 'ng-socket-io';
 
 @Component({
   selector: 'app-company',
@@ -24,7 +23,6 @@ export class CompanyComponent implements OnInit {
   company: Company;
   
   constructor(
-    private socket: Socket,
     private _location: Location,
     private companyService: CompanyService,
     private modalService: NgbModal) {}
@@ -33,15 +31,7 @@ export class CompanyComponent implements OnInit {
     this.company = new Company();
   }
 
-  sendMessage(msg: string){
-    this.socket.emit("message", msg);
-  }
-
-  getMessage() {
-      return this.socket
-          .fromEvent("message")
-          .map( data => data.msg );
-  }
+ 
 
   public backLocation() {
     this._location.back();

@@ -18,5 +18,6 @@ export class DocSend {
     _rev: string;
     approveRule: string;
     approvePerson: string;
+    status: string;
 }
 
